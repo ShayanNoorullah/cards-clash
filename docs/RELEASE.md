@@ -54,6 +54,22 @@ To switch to the automatic workflow instead, push `main` (needs a GitHub token
 with the `workflow` scope: `gh auth refresh -h github.com -s workflow`) and set
 Settings → Pages → Source to "GitHub Actions".
 
+### Hosted Supabase (online play)
+
+Project `cards-clash` (ref `idchielsujwfqhiwbsui`, free tier,
+`https://idchielsujwfqhiwbsui.supabase.co`). The database migrations are
+applied and the repository variables `VITE_SUPABASE_URL` /
+`VITE_SUPABASE_ANON_KEY` are set. One-time setup from this folder:
+
+```bash
+npx supabase login
+npx supabase link --workdir server --project-ref idchielsujwfqhiwbsui
+npx supabase config push --workdir server   # anonymous sign-ins + code e-mail templates
+npm run server:deploy                        # migrations + the game Edge Function
+```
+
+The service-role key never goes into the client, `.env.local` or GitHub variables.
+
 ### itch.io
 
 1. `npm run build && npm run package:web`.

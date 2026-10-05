@@ -12,7 +12,8 @@ export default defineConfig({
     outDir: 'server/supabase/functions/_shared',
     emptyOutDir: false,
     target: 'es2022',
-    minify: false,
+    // Smaller upload and faster cold starts.
+    minify: 'esbuild',
     sourcemap: false,
     lib: {
       entry: 'src/online/server/index.ts',
