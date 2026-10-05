@@ -71,12 +71,12 @@ npm run server:deploy                        # migrations + the game Edge Functi
 The service-role key never goes into the client, `.env.local` or GitHub variables.
 
 `[remotes.production]` in `server/supabase/config.toml` sets the hosted site URL
-and e-mail rate limit. Free-tier projects cannot change e-mail templates on the
-built-in mailer, so `config push` fails on the `[auth.email.template.*]` blocks
-and e-mail sign-in sends Supabase's default link e-mail (no 6-digit code). Guest
-play, Ranked and Friendly rooms work without it. For code e-mails, add a custom
-SMTP provider (Dashboard → Authentication → Emails → SMTP, e.g. Resend's free
-tier) and run `config push` again.
+and e-mail rate limit. Sign-in codes are sent through Resend (custom SMTP, set up
+with Resend's Supabase integration) from `noreply@mail.shayannoorullah.tech`.
+The `mail` subdomain's DKIM/SPF/DMARC records live in Vercel DNS for
+`shayannoorullah.tech`; the portfolio's own records are untouched. Supabase
+blocks template changes on its built-in mailer, so `config push` needs custom
+SMTP in place to update `[auth.email.template.*]`.
 
 ### itch.io
 
