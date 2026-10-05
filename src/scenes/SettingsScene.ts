@@ -93,7 +93,7 @@ export class SettingsScene extends Phaser.Scene {
     );
 
     // Display & motion
-    panel(this, 440, 640);
+    panel(this, 440, 740);
     heading(480, 'settings.display');
     label(560, t('settings.speed'));
     new Chips<'1' | '2' | 'instant'>(
@@ -149,26 +149,28 @@ export class SettingsScene extends Phaser.Scene {
     );
     label(1010, t('settings.colorblind'), t('settings.colorblind.help'));
     onOff(860, 1010, s.colorblindIcons, (v) => updateSettings({ colorblindIcons: v }));
+    label(1110, t('settings.attackTiming'), t('settings.attackTiming.help'));
+    onOff(860, 1110, s.attackTiming, (v) => updateSettings({ attackTiming: v }));
 
     // Language
-    panel(this, 1110, 150);
-    heading(1150, 'settings.language');
+    panel(this, 1210, 150);
+    heading(1250, 'settings.language');
     new Chips(
       this,
       760,
-      1185,
+      1285,
       LANGUAGES.map((l) => ({ value: l.id, label: l.name })),
       s.language,
       (v) => updateSettings({ language: v }),
       { fontSize: 26, height: 60, maxWidth: 520 },
     );
     this.add
-      .text(60, 1220, 'More languages can be added to the string table.', {
+      .text(60, 1320, 'More languages can be added to the string table.', {
         ...textStyle(bodySize(22), { color: hex(COLORS.textDim), strokeThickness: 3 }),
       })
       .setOrigin(0, 0.5);
 
-    new Button(this, GAME_WIDTH / 2, 1560, 'Account & cloud save', {
+    new Button(this, GAME_WIDTH / 2, 1640, 'Account & cloud save', {
       width: 940,
       height: 110,
       fontSize: 38,
@@ -176,7 +178,7 @@ export class SettingsScene extends Phaser.Scene {
       shadowColor: 0x0f3a44,
       onClick: () => goToScene(this, SCENE_KEYS.Account),
     });
-    new Button(this, GAME_WIDTH / 2 - 250, 1400, t('settings.credits'), {
+    new Button(this, GAME_WIDTH / 2 - 250, 1480, t('settings.credits'), {
       width: 440,
       height: 120,
       fontSize: 40,
@@ -184,7 +186,7 @@ export class SettingsScene extends Phaser.Scene {
       shadowColor: COLORS.secondaryDark,
       onClick: () => goToScene(this, SCENE_KEYS.Credits),
     });
-    new Button(this, GAME_WIDTH / 2 + 250, 1400, t('settings.tutorial'), {
+    new Button(this, GAME_WIDTH / 2 + 250, 1480, t('settings.tutorial'), {
       width: 440,
       height: 120,
       fontSize: 40,
@@ -195,7 +197,7 @@ export class SettingsScene extends Phaser.Scene {
     this.add
       .text(
         GAME_WIDTH / 2,
-        1680,
+        1760,
         `Cards Clash v${__APP_VERSION__} · settings are saved on this device`,
         textStyle(24, { color: hex(COLORS.textDim) }),
       )

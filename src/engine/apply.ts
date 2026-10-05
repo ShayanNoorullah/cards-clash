@@ -260,7 +260,7 @@ export function applyAction(state: GameState, action: Action, ctx: RulesContext)
       doUltimate(x, action);
       break;
     case 'endTurn':
-      endTurn(x, action.player, action.discard);
+      endTurn(x, action.player, action.discard, action.strikes);
       break;
     case 'surrender':
       endGame(x, other(action.player), 'surrender');

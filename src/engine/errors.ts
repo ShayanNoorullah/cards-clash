@@ -29,6 +29,7 @@ export type ActionErrorCode =
   | 'FROZEN'
   | 'CONDITION_NOT_MET'
   | 'INVALID_DISCARD'
+  | 'INVALID_STRIKES'
   | 'BLOCKED'
   | 'LANE_SEALED'
   | 'RARITY_CAP'

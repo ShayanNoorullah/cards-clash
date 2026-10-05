@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { act, build, eventsOf, give, passRound, startedGame, summon } from '../helpers';
+import { attackingLanes } from '../../src/engine';
+import { act, build, CTX, eventsOf, expectError, give, passRound, startedGame, summon } from '../helpers';
 
 describe('combat', () => {
   it('an unblocked creature hits the enemy Hero', () => {
@@ -117,5 +118,50 @@ describe('combat', () => {
     summon(state, 0, 1, 'neutral_wanderer');
     const r = act(state, { type: 'endTurn', player: 0 });
     expect(r.state.players[0].ultimateCharge).toBe(100);
+  });
+
+  describe('attack timing', () => {
+    it('a perfect strike doubles the damage', () => {
+      const state = startedGame({ firstPlayer: 0 });
+      summon(state, 0, 1, 'neutral_wanderer'); // 2 ATK
+      const r = act(state, { type: 'endTurn', player: 0, strikes: [null, 'perfect'] });
+      expect(r.state.players[1].hp).toBe(21);
+      expect(eventsOf(r.events, 'attack')[0]).toMatchObject({ lane: 1, roll: 'perfect' });
+    });
+
+    it('a miss deals no damage and draws no retaliation', () => {
+      const state = startedGame({ firstPlayer: 0 });
+      summon(state, 0, 0, 'neutral_wanderer');
+      summon(state, 1, 0, 'azure_sentinel');
+      const r = act(state, { type: 'endTurn', player: 0, strikes: ['miss'] });
+      expect(r.state.players[1].lanes[0]!.creature!.damage).toBe(0);
+      expect(eventsOf(r.events, 'damage')).toEqual([]);
+      expect(eventsOf(r.events, 'attack')[0]).toMatchObject({ lane: 0, roll: 'miss' });
+    });
+
+    it('a normal hit is the default and adds no roll to the event', () => {
+      const state = startedGame({ firstPlayer: 0 });
+      summon(state, 0, 1, 'neutral_wanderer');
+      const r = act(state, { type: 'endTurn', player: 0, strikes: [null, 'hit'] });
+      expect(r.state.players[1].hp).toBe(23);
+      expect(eventsOf(r.events, 'attack')[0]).not.toHaveProperty('roll');
+    });
+
+    it('rejects malformed timing results', () => {
+      const state = startedGame({ firstPlayer: 0 });
+      expectError(state, { type: 'endTurn', player: 0, strikes: ['crit' as never] }, 'INVALID_STRIKES');
+      expectError(
+        state,
+        { type: 'endTurn', player: 0, strikes: [null, null, null, null, 'hit'] },
+        'INVALID_STRIKES',
+      );
+    });
+
+    it('lists the lanes that will attack', () => {
+      const state = startedGame({ firstPlayer: 0 });
+      summon(state, 0, 1, 'neutral_wanderer');
+      summon(state, 0, 3, 'golden_sprout');
+      expect(attackingLanes(state, CTX, 0)).toEqual([1, 3]);
+    });
   });
 });

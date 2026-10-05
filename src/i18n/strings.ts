@@ -46,6 +46,8 @@ const en = {
   'settings.access': 'Accessibility',
   'settings.colorblind': 'Landscape symbols',
   'settings.colorblind.help': 'Shows each landscape’s icon on the board, not just its colour.',
+  'settings.attackTiming': 'Attack timing',
+  'settings.attackTiming.help': 'Tap the spinning disc: Perfect doubles damage, a Miss deals none.',
   'settings.language': 'Language',
   'settings.credits': 'Credits',
   'settings.tutorial': 'Replay tutorial',

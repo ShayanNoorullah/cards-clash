@@ -65,7 +65,9 @@ export function describeEvent(
       return `${who(e.player)} uses ${hero ? `${hero.name}'s Hero Ability` : 'their Hero Ability'}!`;
     }
     case 'attack':
-      return `${cardName(ctx, state.players[e.player].lanes[e.lane]?.creature?.cardId ?? findCard(state, e.iid))} attacks ${targetName(e.target, state, ctx, names)}.`;
+      return `${cardName(ctx, state.players[e.player].lanes[e.lane]?.creature?.cardId ?? findCard(state, e.iid))} attacks ${targetName(e.target, state, ctx, names)}${
+        e.roll === 'perfect' ? ': a Perfect hit, double damage!' : e.roll === 'miss' ? ', but misses.' : '.'
+      }`;
     case 'damage':
       return `${targetName(e.target, state, ctx, names)} takes ${e.amount} damage.`;
     case 'heal':

@@ -71,7 +71,17 @@ export interface EndTurnAction {
   type: 'endTurn';
   player: PlayerId;
   discard?: string[];
+  /**
+   * Attack timing results by lane (the spinning disc): 'miss' deals no damage,
+   * 'perfect' doubles it. Missing entries are a normal 'hit'.
+   */
+  strikes?: (StrikeRoll | null)[];
 }
+
+/** How well an attack was timed. */
+export type StrikeRoll = 'miss' | 'hit' | 'perfect';
+
+export const STRIKE_ROLLS: readonly StrikeRoll[] = ['miss', 'hit', 'perfect'];
 
 /** Spend a full Ultimate charge to use the Hero's Ultimate (no MP cost). */
 export interface UseUltimateAction {

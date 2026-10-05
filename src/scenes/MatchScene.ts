@@ -6,7 +6,8 @@ import { PALETTE } from '../art/palette';
 import { addBackground } from '../art/proceduralTextures';
 import { FONT_FAMILY, GAME_HEIGHT, GAME_WIDTH, SCENE_KEYS } from '../config/display';
 import { getContent } from '../engine/content';
-import type { Action, PlayCardAction } from '../engine/actions';
+import type { Action, EndTurnAction, PlayCardAction } from '../engine/actions';
+import { attackingLanes } from '../engine/turn';
 import { creatureAtk, creatureDef, keywordValue } from '../engine/statics';
 import { moveCost, validateAction } from '../engine/validate';
 import type { CardDef, LandscapeType, PlayerId, TargetRef } from '../engine/types';
@@ -33,6 +34,8 @@ import { playersToAct } from '../engine/legal';
 import type { GameEvent } from '../engine/events';
 import { BoardView } from '../match/views/BoardView';
 import { GoButton } from '../match/views/GoButton';
+import { spinForStrike } from '../match/views/AttackSpinner';
+import { aiRoll, strikesFor } from '../match/strikeTiming';
 import { getSettings, updateSettings } from '../services/settings';
 import { clientRng } from '../progression/client';
 import { PROGRESSION } from '../progression/config';
@@ -304,7 +307,58 @@ export class MatchScene extends Phaser.Scene {
     if (elapsed < minPause) await wait(this, minPause - elapsed);
     this.showThinking(false);
     if (!this.sys.isActive()) return;
-    await this.submit(decision.action);
+    let action = decision.action;
+    // AI attacks are timed too: better opponents land more Perfect hits and miss less.
+    if (action.type === 'endTurn' && this.timingOn()) {
+      const lanes = attackingLanes(this.controller.state, this.controller.ctx, p);
+      if (lanes.length > 0) action = { ...action, strikes: strikesFor(lanes, () => aiRoll(difficulty)) };
+    }
+    await this.submit(action);
+  }
+
+  /** Attack timing (the spinning disc) is on for local matches; online and tutorial attacks always land. */
+  private timingOn(): boolean {
+    return getSettings().attackTiming && !this.online && !this.tutorial;
+  }
+
+  /** Spins the timing disc for each attacker, left to right, then ends the turn with the results. */
+  private async endTurn(discard?: string[]): Promise<void> {
+    const base: EndTurnAction = discard
+      ? { type: 'endTurn', player: this.viewer, discard }
+      : { type: 'endTurn', player: this.viewer };
+    const { state, ctx } = this.controller;
+    const lanes = this.timingOn() ? attackingLanes(state, ctx, this.viewer) : [];
+    if (lanes.length === 0 || this.busy) {
+      await this.submit(base);
+      return;
+    }
+    this.busy = true;
+    this.setMode({ kind: 'idle' });
+    const rolls = new Map<number, Awaited<ReturnType<typeof spinForStrike>>>();
+    try {
+      for (const lane of lanes) {
+        const c = state.players[this.viewer].lanes[lane]!.creature!;
+        const card = ctx.cards.byId.get(c.cardId);
+        const token = this.board.tokenByIid(c.iid);
+        const glow = token
+          ? this.tweens.add({
+              targets: token,
+              scale: token.baseScale * 1.12,
+              duration: 300,
+              yoyo: true,
+              repeat: -1,
+            })
+          : null;
+        const title = `${card?.name ?? 'Creature'} · ${creatureAtk(state, ctx, c, lane)} ATK`;
+        rolls.set(lane, await spinForStrike(this, GAME_WIDTH / 2, GAME_HEIGHT * 0.46, title));
+        glow?.stop();
+        token?.setScale(token.baseScale);
+        if (!this.sys.isActive()) return;
+      }
+    } finally {
+      this.busy = false;
+    }
+    await this.submit({ ...base, strikes: strikesFor(lanes, (lane) => rolls.get(lane) ?? 'hit') });
   }
 
   private showThinking(on: boolean): void {
@@ -688,7 +742,7 @@ export class MatchScene extends Phaser.Scene {
       this.showDiscardPicker(p.hand.length - limit);
       return;
     }
-    void this.submit({ type: 'endTurn', player: this.viewer });
+    void this.endTurn();
   }
 
   // -------------------------------------------------------------------------
@@ -904,7 +958,7 @@ export class MatchScene extends Phaser.Scene {
           return;
         }
         this.closeOverlay();
-        void this.submit({ type: 'endTurn', player: this.viewer, discard: [...chosen] });
+        void this.endTurn([...chosen]);
       },
     });
     hand.forEach((inst, i) => {

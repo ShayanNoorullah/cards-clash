@@ -368,6 +368,11 @@ export class GameService {
       throw new ServiceError('STALE', 'Your game is out of date.', { view: this.viewFor(m, me, []) });
     if (!action || typeof action !== 'object' || action.player !== me)
       throw new ServiceError('WRONG_PLAYER', 'You can only act for yourself.');
+    // Attack timing is client-side only, so online attacks always land normally (no claimed "perfect" hits).
+    if (action.type === 'endTurn' && action.strikes !== undefined) {
+      const { strikes: _ignored, ...rest } = action;
+      action = rest;
+    }
     const now = this.d.now();
     m.lastSeen = [...m.lastSeen];
     m.lastSeen[me] = now;

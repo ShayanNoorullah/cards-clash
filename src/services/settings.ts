@@ -14,6 +14,8 @@ export interface Settings {
   sfxVolume: number;
   textScale: number;
   colorblindIcons: boolean;
+  /** Time your attacks with the spinning disc (off: every attack is a normal hit). */
+  attackTiming: boolean;
   /** Flat top-down board or a tilted perspective board. */
   boardView: '2d' | '3d';
   /** Language id from src/i18n/strings.ts. */
@@ -27,6 +29,7 @@ export const DEFAULT_SETTINGS: Settings = {
   sfxVolume: 0.8,
   textScale: 1,
   colorblindIcons: true,
+  attackTiming: true,
   boardView: '3d',
   language: 'en',
 };
@@ -52,6 +55,7 @@ export function sanitizeSettings(input: Partial<Settings>): Settings {
   }
   if (typeof input.reducedMotion === 'boolean') s.reducedMotion = input.reducedMotion;
   if (typeof input.colorblindIcons === 'boolean') s.colorblindIcons = input.colorblindIcons;
+  if (typeof input.attackTiming === 'boolean') s.attackTiming = input.attackTiming;
   if (input.boardView === '2d' || input.boardView === '3d') s.boardView = input.boardView;
   if (typeof input.language === 'string' && /^[a-z]{2}(-[A-Z]{2})?$/.test(input.language))
     s.language = input.language;

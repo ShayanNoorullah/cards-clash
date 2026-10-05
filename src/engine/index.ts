@@ -18,6 +18,7 @@ export * from './effects';
 export * from './validate';
 export * from './apply';
 export * from './legal';
+export { attackingLanes } from './turn';
 export * from './simulate';
 export * from './content';
 export * from './requirements';

@@ -17,6 +17,7 @@ import {
   isOver,
   MP_EFFECT_CAP,
   chargeUltimate,
+  createExec,
   queueCardTrigger,
   queuePlayerTrigger,
   restoreLandscape,
@@ -26,7 +27,8 @@ import {
 import { getHero } from './cards';
 import { mpForTurn } from './state';
 import { creatureArmor, creatureAtk, creatureDef, keywordValue } from './statics';
-import type { CreatureInPlay, PlayerId, TargetRef } from './types';
+import type { StrikeRoll } from './actions';
+import type { CreatureInPlay, GameState, PlayerId, RulesContext, TargetRef } from './types';
 import { other } from './types';
 
 export function canAttack(x: Exec, c: CreatureInPlay, lane: number): boolean {
@@ -125,8 +127,15 @@ function attackTarget(x: Exec, player: PlayerId, lane: number, ranged: boolean):
 /**
  * One creature attacks the opposing lane. `forced` attacks (from effects)
  * ignore exhaustion, summoning sickness and locks; they only need ATK > 0.
+ * `roll` is the attack timing result: a miss deals nothing, a perfect hit doubles the damage.
  */
-export function strike(x: Exec, player: PlayerId, lane: number, forced = false): void {
+export function strike(
+  x: Exec,
+  player: PlayerId,
+  lane: number,
+  forced = false,
+  roll: StrikeRoll = 'hit',
+): void {
   const able = (c: CreatureInPlay) => (forced ? creatureAtk(x.s, x.ctx, c, lane) > 0 : canAttack(x, c, lane));
   const attacker = creatureAt(x, player, lane);
   if (!attacker || !able(attacker)) return;
@@ -140,7 +149,16 @@ export function strike(x: Exec, player: PlayerId, lane: number, forced = false):
 
   const ranged = keywordValue(x.s, x.ctx, a, lane, 'ranged') > 0;
   const target = attackTarget(x, player, lane, ranged);
-  x.events.push({ type: 'attack', player, lane, iid, target });
+  x.events.push(
+    roll === 'hit'
+      ? { type: 'attack', player, lane, iid, target }
+      : { type: 'attack', player, lane, iid, target, roll },
+  );
+  // A miss deals no damage and draws no retaliation.
+  if (roll === 'miss') {
+    drainQueue(x);
+    return;
+  }
 
   // Retaliation keywords are read before damage, so Thorns works even if the defender dies.
   let thorns = 0;
@@ -153,7 +171,7 @@ export function strike(x: Exec, player: PlayerId, lane: number, forced = false):
     counter = keywordValue(x.s, x.ctx, d, target.lane, 'counter') > 0;
   }
 
-  let amount = creatureAtk(x.s, x.ctx, a, lane);
+  let amount = creatureAtk(x.s, x.ctx, a, lane) * (roll === 'perfect' ? 2 : 1);
   if (target.kind === 'creature') {
     const d = creatureAt(x, target.player, target.lane)!;
     amount = Math.max(0, amount - creatureArmor(x.s, x.ctx, d, target.lane));
@@ -195,10 +213,21 @@ export function strike(x: Exec, player: PlayerId, lane: number, forced = false):
 }
 
 /** Combat: each able creature, left lane to right, attacks the opposing lane. */
-export function runCombat(x: Exec, player: PlayerId): void {
+export function runCombat(x: Exec, player: PlayerId, strikes: readonly (StrikeRoll | null)[] = []): void {
   x.events.push({ type: 'phase', player, phase: 'combat' });
   const laneCount = x.s.players[player].lanes.length;
-  for (let lane = 0; lane < laneCount && !isOver(x); lane++) strike(x, player, lane);
+  for (let lane = 0; lane < laneCount && !isOver(x); lane++)
+    strike(x, player, lane, false, strikes[lane] ?? 'hit');
+}
+
+/** Lanes whose creature will attack when `player` ends the turn now (before any combat effects). */
+export function attackingLanes(state: GameState, ctx: RulesContext, player: PlayerId): number[] {
+  const x = createExec(state, ctx);
+  const out: number[] = [];
+  state.players[player].lanes.forEach((l, lane) => {
+    if (l.creature && canAttack(x, l.creature, lane)) out.push(lane);
+  });
+  return out;
 }
 
 /** End phase: End of Turn triggers, thaw, flip timers, temporary buffs, hand limit, MP loss. */
@@ -243,8 +272,13 @@ export function runEndPhase(x: Exec, player: PlayerId, preferredDiscards: readon
   changeMp(x, player, -p.mp);
 }
 
-export function endTurn(x: Exec, player: PlayerId, preferredDiscards?: readonly string[]): void {
-  runCombat(x, player);
+export function endTurn(
+  x: Exec,
+  player: PlayerId,
+  preferredDiscards?: readonly string[],
+  strikes?: readonly (StrikeRoll | null)[],
+): void {
+  runCombat(x, player, strikes);
   if (isOver(x)) return;
   runEndPhase(x, player, preferredDiscards);
   if (isOver(x)) return;

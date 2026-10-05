@@ -12,6 +12,7 @@ import type {
   PlayCardAction,
   UseUltimateAction,
 } from './actions';
+import { STRIKE_ROLLS } from './actions';
 import { starsOf } from './amounts';
 import { chosenSelector, playEffects } from './cards';
 import { cardCost, floopCost } from './costs';
@@ -222,6 +223,15 @@ function validateUltimate(state: GameState, a: UseUltimateAction, ctx: RulesCont
 }
 
 function validateEndTurn(state: GameState, a: EndTurnAction): ActionError | null {
+  if (a.strikes !== undefined) {
+    const lanes = state.players[a.player].lanes.length;
+    if (
+      !Array.isArray(a.strikes) ||
+      a.strikes.length > lanes ||
+      !a.strikes.every((r) => r === null || STRIKE_ROLLS.includes(r))
+    )
+      return actionError('INVALID_STRIKES', 'Attack timing results are invalid.');
+  }
   if (a.discard === undefined) return null;
   const p = state.players[a.player];
   if (!Array.isArray(a.discard) || new Set(a.discard).size !== a.discard.length) {

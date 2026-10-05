@@ -126,6 +126,8 @@ export class Animator {
       case 'attack': {
         const t = board.tokenByIid(e.iid);
         if (!t) return;
+        if (e.roll === 'perfect') floatText(scene, t.x, t.y - 110, 'Perfect! ×2', '#b8ff7a', 50);
+        else if (e.roll === 'miss') floatText(scene, t.x, t.y - 110, 'Miss!', '#ff7a85', 50);
         const home = { x: t.x, y: t.y };
         const target = this.tokenPos(e.target);
         const reach = getSettings().reducedMotion ? 0.2 : 0.65;

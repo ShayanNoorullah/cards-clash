@@ -1,3 +1,4 @@
+import type { StrikeRoll } from './actions';
 import type { EndReason, LandscapeType, PlayerId, TargetRef, TriggerType, Winner } from './types';
 
 /**
@@ -30,7 +31,7 @@ export type GameEvent =
   | { type: 'floop'; player: PlayerId; iid: string; lane: number }
   | { type: 'ultimateUsed'; player: PlayerId; heroId: string }
   | { type: 'triggered'; player: PlayerId; trigger: TriggerType; cardId: string | null; iid: string | null }
-  | { type: 'attack'; player: PlayerId; lane: number; iid: string; target: TargetRef }
+  | { type: 'attack'; player: PlayerId; lane: number; iid: string; target: TargetRef; roll?: StrikeRoll }
   | { type: 'damage'; target: TargetRef; amount: number; sourcePlayer: PlayerId }
   | { type: 'heal'; target: TargetRef; amount: number }
   | { type: 'statsChanged'; player: PlayerId; lane: number; iid: string; atk: number; def: number }
