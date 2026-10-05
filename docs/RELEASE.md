@@ -38,6 +38,22 @@ npm run package:web    # release/cards-clash-web-<version>.zip
 4. Every push to `main` runs `.github/workflows/pages.yml` (tests, build,
    deploy). The game is then at `https://<user>.github.io/<repo>/`.
 
+### GitHub Pages without the workflow (current setup)
+
+The live site (https://shayannoorullah.github.io/cards-clash/) is served from a
+`gh-pages` branch that holds only the built files (Settings → Pages → Source:
+"Deploy from a branch", `gh-pages` / root). To update it by hand:
+
+```bash
+npm run build   # without .env.local (or with your hosted Supabase values)
+cd dist && touch .nojekyll && git init -b gh-pages && git add -A && git commit -m deploy
+git push -f https://github.com/<user>/cards-clash.git gh-pages && cd ..
+```
+
+To switch to the automatic workflow instead, push `main` (needs a GitHub token
+with the `workflow` scope: `gh auth refresh -h github.com -s workflow`) and set
+Settings → Pages → Source to "GitHub Actions".
+
 ### itch.io
 
 1. `npm run build && npm run package:web`.
