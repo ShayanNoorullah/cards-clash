@@ -28,6 +28,8 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 /** Online account: play as a guest, sign in with an email code, link a guest to an email, cloud save. */
 export class AccountScene extends Phaser.Scene {
   private back: string = SCENE_KEYS.Settings;
+  /** An account call is running: ignore more taps and show a "please wait" line. */
+  private busy = false;
 
   constructor() {
     super(SCENE_KEYS.Account);
@@ -38,6 +40,7 @@ export class AccountScene extends Phaser.Scene {
     addBackground(this);
     audio.playMusic('menu');
     this.back = data.back ?? SCENE_KEYS.Settings;
+    this.busy = false;
     this.add.text(GAME_WIDTH / 2, 80, 'Account', textStyle(72, { color: hex(COLORS.accent) })).setOrigin(0.5);
     new Button(this, 100, 80, 'Back', {
       width: 160,
@@ -72,6 +75,12 @@ export class AccountScene extends Phaser.Scene {
   }
 
   private async run(label: string, op: () => Promise<unknown>, ok?: string): Promise<void> {
+    if (this.busy) return;
+    this.busy = true;
+    // The first call after a while wakes the server up and can take a few seconds.
+    const wait = this.add
+      .text(GAME_WIDTH / 2, 1060, `${label}: please wait…`, textStyle(30, { color: hex(COLORS.textDim) }))
+      .setOrigin(0.5);
     try {
       await op();
       if (ok) showToast(this, ok);
@@ -79,6 +88,9 @@ export class AccountScene extends Phaser.Scene {
     } catch (err) {
       audio.play('error');
       showToast(this, err instanceof OnlineError ? err.message : `${label} failed. Check your connection.`);
+    } finally {
+      this.busy = false;
+      if (wait.active) wait.destroy();
     }
   }
 

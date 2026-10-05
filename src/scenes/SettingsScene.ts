@@ -195,7 +195,7 @@ export class SettingsScene extends Phaser.Scene {
     this.add
       .text(
         GAME_WIDTH / 2,
-        1560,
+        1680,
         `Cards Clash v${__APP_VERSION__} · settings are saved on this device`,
         textStyle(24, { color: hex(COLORS.textDim) }),
       )

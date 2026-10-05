@@ -27,6 +27,8 @@ import { fadeIn, goToScene } from '../ui/transitions';
 import { promptText } from './deckUi';
 import { panel } from './modeUi';
 
+const AVATARS_PER_PAGE = 16;
+
 /** Name, avatar, card back, level and lifetime stats. Cosmetics are earned, never bought. */
 export class ProfileScene extends Phaser.Scene {
   constructor() {
@@ -129,30 +131,66 @@ export class ProfileScene extends Phaser.Scene {
       this.add.text(x + 460, y, v, textStyle(28)).setOrigin(1, 0.5);
     });
 
-    // Avatars: 8 heroes, then 8 campaign bosses.
+    // Avatars: one page of 2 x 8 at a time (unlocked first), opening on the selected one.
     const avatarsTop = 920;
     this.add
       .text(60, avatarsTop, t('profile.avatar'), textStyle(36, { color: hex(COLORS.accent) }))
       .setOrigin(0, 0.5);
-    avatarStatus(save, content).forEach((a, i) => {
-      const x = 120 + (i % 8) * 120;
-      const y = avatarsTop + 90 + Math.floor(i / 8) * 130;
-      const h = content.ctx.heroes.byId.get(a.id);
-      if (!h) return;
-      const selected = save.profile.avatar === a.id;
-      const g = this.add.graphics();
-      g.fillStyle(selected ? COLORS.accent : COLORS.outline, 1);
-      g.fillCircle(x, y, 56);
-      const img = ArtCache.heroImage(this, x, y, h).setDisplaySize(100, 100);
-      if (!a.unlocked) {
-        img.setTint(0x333344).setAlpha(0.6);
-        this.add.text(x, y, '🔒', textStyle(34)).setOrigin(0.5);
+    const avatars = avatarStatus(save, content)
+      .map((a, i) => ({ a, i }))
+      .sort((x, y) => Number(y.a.unlocked) - Number(x.a.unlocked) || x.i - y.i)
+      .map((x) => x.a);
+    const pages = Math.max(1, Math.ceil(avatars.length / AVATARS_PER_PAGE));
+    const selectedAt = avatars.findIndex((a) => a.id === save.profile.avatar);
+    let page = Math.max(0, Math.floor(selectedAt / AVATARS_PER_PAGE));
+    const grid = this.add.container(0, 0);
+    const pageLabel = this.add
+      .text(GAME_WIDTH - 200, avatarsTop, '', textStyle(28, { color: hex(COLORS.textDim) }))
+      .setOrigin(0.5);
+    const showPage = (): void => {
+      grid.removeAll(true);
+      pageLabel.setText(`${page + 1} / ${pages}`);
+      avatars.slice(page * AVATARS_PER_PAGE, (page + 1) * AVATARS_PER_PAGE).forEach((a, i) => {
+        const x = 120 + (i % 8) * 120;
+        const y = avatarsTop + 90 + Math.floor(i / 8) * 130;
+        const h = content.ctx.heroes.byId.get(a.id);
+        if (!h) return;
+        const selected = save.profile.avatar === a.id;
+        const g = this.add.graphics();
+        g.fillStyle(selected ? COLORS.accent : COLORS.outline, 1);
+        g.fillCircle(x, y, 56);
+        const img = ArtCache.heroImage(this, x, y, h).setDisplaySize(100, 100);
+        grid.add([g, img]);
+        if (!a.unlocked) {
+          img.setTint(0x333344).setAlpha(0.6);
+          grid.add(this.add.text(x, y, '🔒', textStyle(34)).setOrigin(0.5));
+        }
+        img.setInteractive({ useHandCursor: true });
+        img.on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () =>
+          this.apply(setAvatar(saves().save, a.id, content), `${a.name}: ${a.requirement}`),
+        );
+      });
+    };
+    const turn = (delta: number): void => {
+      page = (page + delta + pages) % pages;
+      showPage();
+    };
+    if (pages > 1) {
+      for (const [x, label, delta] of [
+        [GAME_WIDTH - 320, '◀', -1],
+        [GAME_WIDTH - 80, '▶', 1],
+      ] as const) {
+        new Button(this, x, avatarsTop, label, {
+          width: 90,
+          height: 70,
+          fontSize: 32,
+          color: COLORS.secondary,
+          shadowColor: COLORS.secondaryDark,
+          onClick: () => turn(delta),
+        });
       }
-      img.setInteractive({ useHandCursor: true });
-      img.on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, () =>
-        this.apply(setAvatar(saves().save, a.id, content), `${a.name}: ${a.requirement}`),
-      );
-    });
+    }
+    showPage();
 
     // Card backs.
     const backsTop = 1260;
