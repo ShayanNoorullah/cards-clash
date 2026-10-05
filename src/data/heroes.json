@@ -1,0 +1,1820 @@
+[
+  {
+    "id": "ash",
+    "name": "Ash",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_ash",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) Return any card from the Discard Pile back to your hand.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "recover",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/ash.webp"
+  },
+  {
+    "id": "bmo",
+    "name": "BMO",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_bmo",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Gain 2 extra Magic Points for 1 turn.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/bmo.webp"
+  },
+  {
+    "id": "banana_guard",
+    "name": "Banana Guard",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_banana_guard",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your creatures gain +3 Defense.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 3
+        }
+      ]
+    },
+    "image": "cards/banana_guard.webp"
+  },
+  {
+    "id": "berrybones",
+    "name": "BerryBones",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_berrybones",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) Return any card from the Discard Pile to your hand.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "recover",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/berrybones.webp"
+  },
+  {
+    "id": "blumps",
+    "name": "Blumps",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_blumps",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All of your creatures gain +3 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 3,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/blumps.webp"
+  },
+  {
+    "id": "bonechill",
+    "name": "BoneChill",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_bonechill",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Gain 3 extra Magic Points for 1 turn.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/bonechill.webp"
+  },
+  {
+    "id": "cake",
+    "name": "Cake",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_cake",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Gain 3 extra Magic Points for 1 turn.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/cake.webp"
+  },
+  {
+    "id": "cinnamon_bun",
+    "name": "Cinnamon Bun",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_cinnamon_bun",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your Nicelands creatures gain +3 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 3,
+          "def": 0,
+          "filter": {
+            "landscape": "candy"
+          }
+        }
+      ]
+    },
+    "image": "cards/cinnamon_bun.webp"
+  },
+  {
+    "id": "date_night_ice_king",
+    "name": "Date-Night Ice King",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_date_night_ice_king",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) +1 Attack & +2 Def to all Nice Land Cards.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 1,
+          "def": 2,
+          "filter": {
+            "landscape": "candy"
+          }
+        }
+      ]
+    },
+    "image": "cards/date_night_ice_king.webp"
+  },
+  {
+    "id": "doctor_finn",
+    "name": "Doctor Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_doctor_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All Spells cast this turn cost 1 less Magic Point.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "spell",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/doctor_finn.webp"
+  },
+  {
+    "id": "donut_goon",
+    "name": "Donut Goon",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_donut_goon",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All of your creatures gain +5 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/donut_goon.webp"
+  },
+  {
+    "id": "dr_donut",
+    "name": "Dr. Donut",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_dr_donut",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) Return any Creature from the Discard Pile back to your hand.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "recover",
+          "cardType": "creature",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/dr_donut.webp"
+  },
+  {
+    "id": "earl_of_lemongrab",
+    "name": "Earl of Lemongrab",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_earl_of_lemongrab",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All creatures summoned this turn cost 1 less Magic Point.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/earl_of_lemongrab.webp"
+  },
+  {
+    "id": "el_fisto",
+    "name": "El Fisto",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_el_fisto",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Draw 2 Cards.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "draw",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/el_fisto.webp"
+  },
+  {
+    "id": "finn",
+    "name": "Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) Gain 2 extra Magic Points for 1 turn.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/finn.webp"
+  },
+  {
+    "id": "fionna",
+    "name": "Fionna",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_fionna",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All creatures summoned this turn cost 1 less Magic Point.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/fionna.webp"
+  },
+  {
+    "id": "flame_princess",
+    "name": "Flame Princess",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_flame_princess",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) Draw 2 cards.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "draw",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/flame_princess.webp"
+  },
+  {
+    "id": "ghost_jake",
+    "name": "Ghost Jake",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_ghost_jake",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your Plains creatures gain +5 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0,
+          "filter": {
+            "landscape": "azure"
+          }
+        }
+      ]
+    },
+    "image": "cards/ghost_jake.webp"
+  },
+  {
+    "id": "gunter",
+    "name": "Gunter",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_gunter",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 turns) Return any Spell card from the Discard Pile to your hand.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "recover",
+          "cardType": "spell",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/gunter.webp"
+  },
+  {
+    "id": "holiday_bmo",
+    "name": "Holiday BMO",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_bmo",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) Draw 3 cards.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "draw",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/holiday_bmo.webp"
+  },
+  {
+    "id": "holiday_finn",
+    "name": "Holiday Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) All your Universal creatures gain +5 Attack.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0,
+          "filter": {
+            "landscape": "neutral"
+          }
+        }
+      ]
+    },
+    "image": "cards/holiday_finn.webp"
+  },
+  {
+    "id": "holiday_ice_king",
+    "name": "Holiday Ice King",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_ice_king",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Fully heal all of your Swamp creatures",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          },
+          "filter": {
+            "landscape": "murk"
+          }
+        }
+      ]
+    },
+    "image": "cards/holiday_ice_king.webp"
+  },
+  {
+    "id": "holiday_jake",
+    "name": "Holiday Jake",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_jake",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) All Spells cast this turn cost 2 less Magic Point.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "spell",
+          "amount": -2
+        }
+      ]
+    },
+    "image": "cards/holiday_jake.webp"
+  },
+  {
+    "id": "holiday_lumpy_space_princess",
+    "name": "Holiday Lumpy Space Princess",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_lumpy_space_princess",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) Gain 3 extra Magic Points for 1 turn.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/holiday_lumpy_space_princess.webp"
+  },
+  {
+    "id": "holiday_princess_bubblegum",
+    "name": "Holiday Princess Bubblegum",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_holiday_princess_bubblegum",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) All of your creatures gain +4 Attack.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 4,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/holiday_princess_bubblegum.webp"
+  },
+  {
+    "id": "hunson_abadeer",
+    "name": "Hunson Abadeer",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_hunson_abadeer",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) All cards cast this turn cost 1 less magic point.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "card",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/hunson_abadeer.webp"
+  },
+  {
+    "id": "ice_king",
+    "name": "Ice King",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_ice_king",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) Send all of your opponent's Buildings back to their hand.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "returnBuilding",
+          "target": "allEnemyBuildings"
+        }
+      ]
+    },
+    "image": "cards/ice_king.webp"
+  },
+  {
+    "id": "ice_queen",
+    "name": "Ice Queen",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_ice_queen",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your creatures gain +4 Defense.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 4
+        }
+      ]
+    },
+    "image": "cards/ice_queen.webp"
+  },
+  {
+    "id": "jake",
+    "name": "Jake",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_jake",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your Corn creatures gain +3 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 3,
+          "def": 0,
+          "filter": {
+            "landscape": "golden"
+          }
+        }
+      ]
+    },
+    "image": "cards/jake.webp"
+  },
+  {
+    "id": "lady_rainicorn",
+    "name": "Lady Rainicorn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_lady_rainicorn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Choose a creature and fully heal it.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "chosenCreature",
+          "amount": {
+            "of": "targetDamage"
+          }
+        }
+      ]
+    },
+    "image": "cards/lady_rainicorn.webp"
+  },
+  {
+    "id": "lord_monochromicorn",
+    "name": "Lord Monochromicorn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_lord_monochromicorn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Opponent cannot use Spells next round and all Buildings on the board are discarded.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "block",
+          "what": "spell"
+        },
+        {
+          "type": "destroyBuilding",
+          "target": "allBuildings"
+        }
+      ]
+    },
+    "image": "cards/lord_monochromicorn.webp"
+  },
+  {
+    "id": "lumpy_mimic",
+    "name": "Lumpy Mimic",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_lumpy_mimic",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Gain 2 extra Magic Points for 1 turn.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/lumpy_mimic.webp"
+  },
+  {
+    "id": "lumpy_space_prince",
+    "name": "Lumpy Space Prince",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_lumpy_space_prince",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All Spells cast this turn cost 2 less Magic Points.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "spell",
+          "amount": -2
+        }
+      ]
+    },
+    "image": "cards/lumpy_space_prince.webp"
+  },
+  {
+    "id": "lumpy_space_princess",
+    "name": "Lumpy Space Princess",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_lumpy_space_princess",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Fully heal all of your Plains creatures.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          },
+          "filter": {
+            "landscape": "azure"
+          }
+        }
+      ]
+    },
+    "image": "cards/lumpy_space_princess.webp"
+  },
+  {
+    "id": "magic_man",
+    "name": "Magic Man",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_magic_man",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Gain 1 extra Magic Point this turn.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 1
+        }
+      ]
+    },
+    "image": "cards/magic_man.webp"
+  },
+  {
+    "id": "marceline",
+    "name": "Marceline",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_marceline",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All of your creatures gain +2 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 2,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/marceline.webp"
+  },
+  {
+    "id": "marshall_lee",
+    "name": "Marshall Lee",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_marshall_lee",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All of your creatures gain +3 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 3,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/marshall_lee.webp"
+  },
+  {
+    "id": "pajama_finn",
+    "name": "Pajama Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_pajama_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your Universal creatures gain +4 Defense.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 4,
+          "filter": {
+            "landscape": "neutral"
+          }
+        }
+      ]
+    },
+    "image": "cards/pajama_finn.webp"
+  },
+  {
+    "id": "peppermint_butler",
+    "name": "Peppermint Butler",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_peppermint_butler",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Return any Building card from the Discard Pile to your hand.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "recover",
+          "cardType": "building",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/peppermint_butler.webp"
+  },
+  {
+    "id": "prince_gumball",
+    "name": "Prince Gumball",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_prince_gumball",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Nice Lands Creatures deploy cost cut by 2, every other land cut by 1.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1
+        },
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1,
+          "landscape": "candy"
+        }
+      ]
+    },
+    "image": "cards/prince_gumball.webp"
+  },
+  {
+    "id": "princess_bubblegum",
+    "name": "Princess Bubblegum",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_princess_bubblegum",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(4 Turns) Fully heal all of your creatures.",
+      "cooldown": 4,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          }
+        }
+      ]
+    },
+    "image": "cards/princess_bubblegum.webp"
+  },
+  {
+    "id": "princess_cookie",
+    "name": "Princess Cookie",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_princess_cookie",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your Swamp creatures gain +4 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 4,
+          "def": 0,
+          "filter": {
+            "landscape": "murk"
+          }
+        }
+      ]
+    },
+    "image": "cards/princess_cookie.webp"
+  },
+  {
+    "id": "ricardio_heart_guy",
+    "name": "Ricardio Heart Guy",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_ricardio_heart_guy",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Draw 1 card.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "draw",
+          "amount": 1
+        }
+      ]
+    },
+    "image": "cards/ricardio_heart_guy.webp"
+  },
+  {
+    "id": "slumpy",
+    "name": "Slumpy",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_slumpy",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All creatures summoned this turn cost 1 less Magic Point.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/slumpy.webp"
+  },
+  {
+    "id": "snowfist",
+    "name": "SnowFist",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_snowfist",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All Spells cast this turn cost less 2 Magic Points.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "spell",
+          "amount": -2
+        }
+      ]
+    },
+    "image": "cards/snowfist.webp"
+  },
+  {
+    "id": "snownut",
+    "name": "SnowNut",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_snownut",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All your creatures gain +3 Defense.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 3
+        }
+      ]
+    },
+    "image": "cards/snownut.webp"
+  },
+  {
+    "id": "snowberry",
+    "name": "Snowberry",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_snowberry",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Fully heal all of your creatures.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          }
+        }
+      ]
+    },
+    "image": "cards/snowberry.webp"
+  },
+  {
+    "id": "sprinkles",
+    "name": "Sprinkles",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_sprinkles",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(5 Turns) Gain 2 extra Magic Points for 1 turn.",
+      "cooldown": 5,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 2
+        }
+      ]
+    },
+    "image": "cards/sprinkles.webp"
+  },
+  {
+    "id": "super_ash",
+    "name": "Super Ash",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_ash",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Gain +3 extra Magic Points for 1 turn.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/super_ash.webp"
+  },
+  {
+    "id": "super_bmo",
+    "name": "Super BMO",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_bmo",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Gain 3 extra Magic Points for 1 turn.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "gainMp",
+          "amount": 3
+        }
+      ]
+    },
+    "image": "cards/super_bmo.webp"
+  },
+  {
+    "id": "super_banana_guard",
+    "name": "Super Banana Guard",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_banana_guard",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All your creatures gain +3 Defense.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 3
+        }
+      ]
+    },
+    "image": "cards/super_banana_guard.webp"
+  },
+  {
+    "id": "super_cinnamon_bun",
+    "name": "Super Cinnamon Bun",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_cinnamon_bun",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All of your creatures gain +4 Attack.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 4,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/super_cinnamon_bun.webp"
+  },
+  {
+    "id": "super_doctor_finn",
+    "name": "Super Doctor Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_doctor_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Return any Spell card from the Discard Pile to your hand.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "recover",
+          "cardType": "spell",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/super_doctor_finn.webp"
+  },
+  {
+    "id": "super_dr_donut",
+    "name": "Super Dr. Donut",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_dr_donut",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(1 Turn) Return any Creature from the Discard Pile back to your hand.",
+      "cooldown": 1,
+      "effects": [
+        {
+          "type": "recover",
+          "cardType": "creature",
+          "pick": "best"
+        }
+      ]
+    },
+    "image": "cards/super_dr_donut.webp"
+  },
+  {
+    "id": "super_earl_of_lemongrab",
+    "name": "Super Earl Of Lemongrab",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_earl_of_lemongrab",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(1 Turn) All creatures summoned this turn cost 1 less Magic Point.",
+      "cooldown": 1,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "creature",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/super_earl_of_lemongrab.webp"
+  },
+  {
+    "id": "super_flame_princess",
+    "name": "Super Flame Princess",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_flame_princess",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All your Sand creatures gain +5 Attack.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0,
+          "filter": {
+            "landscape": "dune"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_flame_princess.webp"
+  },
+  {
+    "id": "super_gunter",
+    "name": "Super Gunter",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_gunter",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(1 Turn) All your creatures gain +2 Defense. Get everything if you play despacito",
+      "cooldown": 1,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 2
+        }
+      ]
+    },
+    "image": "cards/super_gunter.webp"
+  },
+  {
+    "id": "super_hunson_abadeer",
+    "name": "Super Hunson Abadeer",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_hunson_abadeer",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "All plain creatures on your side +8 attack",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 8,
+          "def": 0,
+          "filter": {
+            "landscape": "azure"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_hunson_abadeer.webp"
+  },
+  {
+    "id": "super_ice_king",
+    "name": "Super Ice King",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_ice_king",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(1 Turn) All of your creatures gain +2 Attack.",
+      "cooldown": 1,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 2,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/super_ice_king.webp"
+  },
+  {
+    "id": "super_jake",
+    "name": "Super Jake",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_jake",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All your Corn creatures gain +5 Attack.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0,
+          "filter": {
+            "landscape": "golden"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_jake.webp"
+  },
+  {
+    "id": "super_lady_rainicorn",
+    "name": "Super Lady Rainicorn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_lady_rainicorn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) Fully heal all of your creatures.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_lady_rainicorn.webp"
+  },
+  {
+    "id": "super_lumpy_space_princess",
+    "name": "Super Lumpy Space Princess",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_lumpy_space_princess",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Fully heal all of your Plains creatures.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          },
+          "filter": {
+            "landscape": "azure"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_lumpy_space_princess.webp"
+  },
+  {
+    "id": "super_magic_man",
+    "name": "Super Magic Man",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_magic_man",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(1 Turn) Send all of your opponent's Buildings back to their hand.",
+      "cooldown": 1,
+      "effects": [
+        {
+          "type": "returnBuilding",
+          "target": "allEnemyBuildings"
+        }
+      ]
+    },
+    "image": "cards/super_magic_man.webp"
+  },
+  {
+    "id": "super_marceline",
+    "name": "Super Marceline",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_marceline",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All of your creatures gain +2 Attack.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 2,
+          "def": 0
+        }
+      ]
+    },
+    "image": "cards/super_marceline.webp"
+  },
+  {
+    "id": "super_pajama_finn",
+    "name": "Super Pajama Finn",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_pajama_finn",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All of your Rainbow creatures gain +6 Defense.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 0,
+          "def": 6,
+          "filter": {
+            "landscape": "neutral"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_pajama_finn.webp"
+  },
+  {
+    "id": "super_peppermint_butler",
+    "name": "Super Peppermint Butler",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_peppermint_butler",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) All of your Universal creatures gain +5 Attack.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 5,
+          "def": 0,
+          "filter": {
+            "landscape": "neutral"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_peppermint_butler.webp"
+  },
+  {
+    "id": "super_princess_bubblegum",
+    "name": "Super Princess Bubblegum",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_princess_bubblegum",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(2 Turns) Fully heal all of your creatures.",
+      "cooldown": 2,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": {
+            "of": "targetDamage"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_princess_bubblegum.webp"
+  },
+  {
+    "id": "super_princess_cookie",
+    "name": "Super Princess Cookie",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_super_princess_cookie",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All of your Swamp creatures gain +8 Attack.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 8,
+          "def": 0,
+          "filter": {
+            "landscape": "murk"
+          }
+        }
+      ]
+    },
+    "image": "cards/super_princess_cookie.webp"
+  },
+  {
+    "id": "treasure_cat",
+    "name": "Treasure Cat",
+    "title": "Hero",
+    "landscape": "neutral",
+    "flavorText": "",
+    "artKey": "hero_treasure_cat",
+    "passive": {
+      "name": "",
+      "text": ""
+    },
+    "ultimate": {
+      "name": "Hero Ability",
+      "text": "(3 Turns) All cards cast this turn cost 1 less magic point.",
+      "cooldown": 3,
+      "effects": [
+        {
+          "type": "costMod",
+          "who": "self",
+          "kind": "card",
+          "amount": -1
+        }
+      ]
+    },
+    "image": "cards/treasure_cat.webp"
+  }
+]

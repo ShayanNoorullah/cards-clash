@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "rating": {
+    "start": 1000,
+    "kNew": 40,
+    "k": 24,
+    "newPlayerGames": 20,
+    "softResetFactor": 0.5,
+    "seasonDays": 42,
+    "tiers": [
+      { "name": "Bronze", "min": 0 },
+      { "name": "Silver", "min": 1100 },
+      { "name": "Gold", "min": 1300 },
+      { "name": "Platinum", "min": 1500 },
+      { "name": "Diamond", "min": 1700 },
+      { "name": "Legend", "min": 1900 }
+    ]
+  },
+  "matchmaking": { "baseWindow": 100, "windowPerSecond": 5, "maxWindow": 500, "queueTimeoutSeconds": 300 },
+  "rewards": {
+    "rankedWin": { "coins": 60, "xp": 60 },
+    "rankedLoss": { "coins": 20, "xp": 25 },
+    "seasonEnd": {
+      "Bronze": { "coins": 150 },
+      "Silver": { "coins": 300 },
+      "Gold": { "coins": 400, "gems": 20 },
+      "Platinum": { "coins": 500, "gems": 40 },
+      "Diamond": { "coins": 600, "gems": 80 },
+      "Legend": { "coins": 800, "gems": 150 }
+    }
+  },
+  "saveCaps": {
+    "coinsPerHour": 2500,
+    "gemsPerHour": 150,
+    "dustPerHour": 1000,
+    "xpPerHour": 2500,
+    "cardsPerHour": 60,
+    "minHours": 1,
+    "maxHours": 72
+  },
+  "client": { "heartbeatSeconds": 15, "syncDebounceSeconds": 30 }
+}

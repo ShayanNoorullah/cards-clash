@@ -1,0 +1,74 @@
+{
+  "entries": [
+    {
+      "name": "Phaser 3",
+      "kind": "library",
+      "author": "Phaser Studio Inc.",
+      "license": "MIT",
+      "url": "https://github.com/phaserjs/phaser"
+    },
+    {
+      "name": "Capacitor (core, Preferences, App, Splash Screen)",
+      "kind": "library",
+      "author": "Ionic / Capacitor contributors",
+      "license": "MIT",
+      "url": "https://github.com/ionic-team/capacitor"
+    },
+    {
+      "name": "supabase-js",
+      "kind": "library",
+      "author": "Supabase",
+      "license": "MIT",
+      "url": "https://github.com/supabase/supabase-js"
+    },
+    {
+      "name": "Oswald (font)",
+      "kind": "font",
+      "author": "Vernon Adams, Kalapi Gajjar, Cyreal",
+      "license": "SIL Open Font License 1.1",
+      "url": "https://fonts.google.com/specimen/Oswald"
+    },
+    {
+      "name": "Barlow Condensed (font)",
+      "kind": "font",
+      "author": "Jeremy Tribby",
+      "license": "SIL Open Font License 1.1",
+      "url": "https://fonts.google.com/specimen/Barlow+Condensed"
+    },
+    {
+      "name": "@fontsource/oswald, @fontsource/barlow-condensed (font packaging)",
+      "kind": "library",
+      "author": "Fontsource contributors",
+      "license": "MIT (packaging) / OFL-1.1 (font files)",
+      "url": "https://github.com/fontsource/font-files"
+    },
+    {
+      "name": "mulberry32 PRNG",
+      "kind": "algorithm",
+      "author": "Tommy Ettinger",
+      "license": "Public Domain",
+      "url": "https://gist.github.com/tommyettinger/46a874533244883189143505d203312c"
+    },
+    {
+      "name": "cyrb53 string hash",
+      "kind": "algorithm",
+      "author": "bryc",
+      "license": "Public Domain",
+      "url": "https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js"
+    },
+    {
+      "name": "Card Wars card data (names, stats, ability texts)",
+      "kind": "content",
+      "author": "Card Wars Wiki contributors (Fandom)",
+      "license": "CC BY-SA 4.0",
+      "url": "https://cardwars.fandom.com/wiki/Card_Wars_Wiki"
+    },
+    {
+      "name": "Card illustrations (realistic style)",
+      "kind": "art",
+      "author": "Generated locally with Stability AI SD-Turbo",
+      "license": "Stability AI Non-Commercial Research Community License",
+      "url": "https://huggingface.co/stabilityai/sd-turbo"
+    }
+  ]
+}

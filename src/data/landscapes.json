@@ -1,0 +1,64 @@
+{
+  "landscapes": [
+    {
+      "id": "azure",
+      "name": "Blue Plains",
+      "theme": "control / freeze",
+      "color": "#3f8fe0",
+      "dark": "#1d4f8f",
+      "light": "#a9d4ff",
+      "icon": "snowflake",
+      "ink": "#2f5fa8"
+    },
+    {
+      "id": "golden",
+      "name": "Corn Fields",
+      "theme": "buffs / swarm",
+      "color": "#f2c230",
+      "dark": "#a87a0c",
+      "light": "#fff0a8",
+      "icon": "sun",
+      "ink": "#b8862a"
+    },
+    {
+      "id": "murk",
+      "name": "Useless Swamp",
+      "theme": "poison / discard",
+      "color": "#8a4fc4",
+      "dark": "#4a2270",
+      "light": "#d4b5f2",
+      "icon": "droplet",
+      "ink": "#6a3e9a"
+    },
+    {
+      "id": "dune",
+      "name": "Sandy Lands",
+      "theme": "direct damage",
+      "color": "#ee8a2a",
+      "dark": "#9c4c0c",
+      "light": "#ffd2a0",
+      "icon": "triangle",
+      "ink": "#b8642a"
+    },
+    {
+      "id": "candy",
+      "name": "Nice Lands",
+      "theme": "healing / shields",
+      "color": "#f27ab8",
+      "dark": "#a33a74",
+      "light": "#ffd0ea",
+      "icon": "heart",
+      "ink": "#b8487e"
+    },
+    {
+      "id": "ember",
+      "name": "Ember Rocks",
+      "theme": "aggression / burn",
+      "color": "#e0413a",
+      "dark": "#8a1a16",
+      "light": "#ffb2a8",
+      "icon": "flame",
+      "ink": "#b23a3a"
+    }
+  ]
+}

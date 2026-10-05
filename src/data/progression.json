@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "xp": {
+    "match": {
+      "win": 60,
+      "loss": 25,
+      "draw": 30
+    },
+    "levelThresholds": [
+      0, 100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 3250, 3850, 4500, 5200, 5950, 6750, 7600, 8500,
+      9450, 10450
+    ],
+    "levelUpReward": {
+      "coins": 100,
+      "gemsEvery5Levels": 20
+    }
+  },
+  "matchCoins": {
+    "win": 40,
+    "loss": 15,
+    "draw": 20
+  },
+  "unlocks": {
+    "deckSlotsBase": 4,
+    "deckSlotsPerLevel": 1,
+    "heroes": {
+      "bmo": 1,
+      "banana_guard": 1,
+      "cinnamon_bun": 1,
+      "finn": 1,
+      "ghost_jake": 1,
+      "jake": 1,
+      "marceline": 1,
+      "pajama_finn": 1,
+      "princess_bubblegum": 1,
+      "princess_cookie": 1,
+      "ash": 2,
+      "berrybones": 2,
+      "blumps": 2,
+      "bonechill": 2,
+      "cake": 3,
+      "date_night_ice_king": 3,
+      "doctor_finn": 3,
+      "donut_goon": 3,
+      "dr_donut": 4,
+      "earl_of_lemongrab": 4,
+      "el_fisto": 4,
+      "fionna": 5,
+      "flame_princess": 5,
+      "gunter": 5,
+      "hunson_abadeer": 5,
+      "ice_king": 6,
+      "ice_queen": 6,
+      "lady_rainicorn": 6,
+      "lord_monochromicorn": 6,
+      "lumpy_mimic": 7,
+      "lumpy_space_prince": 7,
+      "lumpy_space_princess": 7,
+      "magic_man": 8,
+      "marshall_lee": 8,
+      "peppermint_butler": 8,
+      "prince_gumball": 8,
+      "ricardio_heart_guy": 9,
+      "slumpy": 9,
+      "snowfist": 9,
+      "snownut": 9,
+      "snowberry": 10,
+      "sprinkles": 10,
+      "treasure_cat": 10,
+      "holiday_bmo": 11,
+      "holiday_finn": 11,
+      "holiday_ice_king": 11,
+      "holiday_jake": 12,
+      "holiday_lumpy_space_princess": 12,
+      "holiday_princess_bubblegum": 12,
+      "super_ash": 13,
+      "super_bmo": 13,
+      "super_banana_guard": 14,
+      "super_cinnamon_bun": 14,
+      "super_doctor_finn": 14,
+      "super_dr_donut": 15,
+      "super_earl_of_lemongrab": 15,
+      "super_flame_princess": 16,
+      "super_gunter": 16,
+      "super_hunson_abadeer": 16,
+      "super_ice_king": 17,
+      "super_jake": 17,
+      "super_lady_rainicorn": 17,
+      "super_lumpy_space_princess": 18,
+      "super_magic_man": 18,
+      "super_marceline": 19,
+      "super_pajama_finn": 19,
+      "super_peppermint_butler": 19,
+      "super_princess_bubblegum": 20,
+      "super_princess_cookie": 20
+    },
+    "modes": {
+      "quick": 1,
+      "campaign": 1,
+      "sandbox": 2,
+      "daily": 3,
+      "friendly": 3,
+      "gauntlet": 4,
+      "draft": 5,
+      "ranked": 6
+    }
+  },
+  "chests": {
+    "slots": 4,
+    "freeChest": {
+      "type": "wooden",
+      "intervalHours": 4
+    },
+    "minutesPerGem": 10,
+    "victoryDrop": {
+      "wooden": 0.6,
+      "silver": 0.3,
+      "golden": 0.08,
+      "magic": 0.02
+    },
+    "types": {
+      "wooden": {
+        "name": "Wooden Chest",
+        "unlockMinutes": 60,
+        "coins": [20, 40],
+        "cards": 3,
+        "dust": [0, 10],
+        "gemsChance": 0,
+        "gems": [0, 0],
+        "odds": {
+          "common": 0.75,
+          "uncommon": 0.2,
+          "rare": 0.05,
+          "epic": 0,
+          "legendary": 0
+        }
+      },
+      "silver": {
+        "name": "Silver Chest",
+        "unlockMinutes": 180,
+        "coins": [50, 90],
+        "cards": 5,
+        "dust": [10, 30],
+        "gemsChance": 0.1,
+        "gems": [2, 5],
+        "odds": {
+          "common": 0.62,
+          "uncommon": 0.28,
+          "rare": 0.09,
+          "epic": 0.01,
+          "legendary": 0
+        }
+      },
+      "golden": {
+        "name": "Golden Chest",
+        "unlockMinutes": 480,
+        "coins": [120, 200],
+        "cards": 8,
+        "dust": [30, 60],
+        "gemsChance": 0.3,
+        "gems": [5, 10],
+        "odds": {
+          "common": 0.5,
+          "uncommon": 0.32,
+          "rare": 0.14,
+          "epic": 0.035,
+          "legendary": 0.005
+        }
+      },
+      "magic": {
+        "name": "Magic Chest",
+        "unlockMinutes": 720,
+        "coins": [200, 320],
+        "cards": 10,
+        "dust": [50, 100],
+        "gemsChance": 0.6,
+        "gems": [10, 20],
+        "odds": {
+          "common": 0.35,
+          "uncommon": 0.35,
+          "rare": 0.2,
+          "epic": 0.08,
+          "legendary": 0.02
+        }
+      }
+    }
+  },
+  "packs": [
+    {
+      "id": "basic",
+      "name": "Basic Pack",
+      "description": "5 cards, at least one Uncommon or better.",
+      "cost": {
+        "coins": 300
+      },
+      "cards": 5,
+      "guaranteed": "uncommon",
+      "odds": {
+        "common": 0.7,
+        "uncommon": 0.22,
+        "rare": 0.07,
+        "epic": 0.009,
+        "legendary": 0.001
+      }
+    },
+    {
+      "id": "premium",
+      "name": "Premium Pack",
+      "description": "5 cards, at least one Rare or better.",
+      "cost": {
+        "gems": 60
+      },
+      "cards": 5,
+      "guaranteed": "rare",
+      "odds": {
+        "common": 0.45,
+        "uncommon": 0.33,
+        "rare": 0.16,
+        "epic": 0.05,
+        "legendary": 0.01
+      }
+    },
+    {
+      "id": "landscape",
+      "name": "Landscape Pack",
+      "description": "5 cards from the landscape you choose.",
+      "cost": {
+        "coins": 400
+      },
+      "cards": 5,
+      "guaranteed": "uncommon",
+      "landscapeChoice": true,
+      "odds": {
+        "common": 0.7,
+        "uncommon": 0.22,
+        "rare": 0.07,
+        "epic": 0.009,
+        "legendary": 0.001
+      }
+    }
+  ],
+  "login": [
+    {
+      "coins": 100
+    },
+    {
+      "coins": 150
+    },
+    {
+      "dust": 50
+    },
+    {
+      "coins": 200
+    },
+    {
+      "gems": 10
+    },
+    {
+      "chest": "silver"
+    },
+    {
+      "gems": 25,
+      "chest": "golden"
+    }
+  ],
+  "quests": {
+    "perDay": 3,
+    "pool": [
+      {
+        "id": "win_2",
+        "text": "Win 2 matches",
+        "stat": "wins",
+        "target": 2,
+        "reward": {
+          "coins": 80,
+          "xp": 40
+        }
+      },
+      {
+        "id": "play_3",
+        "text": "Play 3 matches",
+        "stat": "matches",
+        "target": 3,
+        "reward": {
+          "coins": 60,
+          "xp": 30
+        }
+      },
+      {
+        "id": "creatures_15",
+        "text": "Play 15 creatures",
+        "stat": "creaturesPlayed",
+        "target": 15,
+        "reward": {
+          "coins": 70,
+          "xp": 35
+        }
+      },
+      {
+        "id": "spells_8",
+        "text": "Cast 8 spells",
+        "stat": "spellsCast",
+        "target": 8,
+        "reward": {
+          "coins": 70,
+          "xp": 35
+        }
+      },
+      {
+        "id": "damage_40",
+        "text": "Deal 40 damage to enemy Heroes",
+        "stat": "heroDamage",
+        "target": 40,
+        "reward": {
+          "coins": 80,
+          "xp": 40
+        }
+      },
+      {
+        "id": "destroy_10",
+        "text": "Destroy 10 enemy creatures",
+        "stat": "creaturesDestroyed",
+        "target": 10,
+        "reward": {
+          "coins": 70,
+          "xp": 35
+        }
+      },
+      {
+        "id": "ultimate_2",
+        "text": "Use your Ultimate 2 times",
+        "stat": "ultimatesUsed",
+        "target": 2,
+        "reward": {
+          "coins": 60,
+          "xp": 30
+        }
+      },
+      {
+        "id": "floop_5",
+        "text": "Floop 5 times",
+        "stat": "floops",
+        "target": 5,
+        "reward": {
+          "coins": 60,
+          "xp": 30
+        }
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "id": "first_win",
+      "name": "First Victory",
+      "text": "Win a match",
+      "stat": "wins",
+      "target": 1,
+      "reward": {
+        "gems": 10
+      }
+    },
+    {
+      "id": "wins_10",
+      "name": "Seasoned",
+      "text": "Win 10 matches",
+      "stat": "wins",
+      "target": 10,
+      "reward": {
+        "gems": 20
+      }
+    },
+    {
+      "id": "wins_50",
+      "name": "Champion",
+      "text": "Win 50 matches",
+      "stat": "wins",
+      "target": 50,
+      "reward": {
+        "gems": 50
+      }
+    },
+    {
+      "id": "creatures_100",
+      "name": "Summoner",
+      "text": "Play 100 creatures",
+      "stat": "creaturesPlayed",
+      "target": 100,
+      "reward": {
+        "coins": 300
+      }
+    },
+    {
+      "id": "spells_100",
+      "name": "Spellslinger",
+      "text": "Cast 100 spells",
+      "stat": "spellsCast",
+      "target": 100,
+      "reward": {
+        "coins": 300
+      }
+    },
+    {
+      "id": "damage_1000",
+      "name": "Hero Hunter",
+      "text": "Deal 1000 damage to enemy Heroes",
+      "stat": "heroDamage",
+      "target": 1000,
+      "reward": {
+        "gems": 30
+      }
+    },
+    {
+      "id": "ultimate_25",
+      "name": "Unleashed",
+      "text": "Use your Ultimate 25 times",
+      "stat": "ultimatesUsed",
+      "target": 25,
+      "reward": {
+        "coins": 500
+      }
+    },
+    {
+      "id": "chests_10",
+      "name": "Treasure Hunter",
+      "text": "Open 10 chests",
+      "stat": "chestsOpened",
+      "target": 10,
+      "reward": {
+        "gems": 20
+      }
+    },
+    {
+      "id": "collector",
+      "name": "Collector",
+      "text": "Own every card",
+      "stat": "uniqueCards",
+      "target": 130,
+      "reward": {
+        "gems": 100
+      }
+    },
+    {
+      "id": "master_card",
+      "name": "Master",
+      "text": "Level a card to 5",
+      "stat": "maxCardLevel",
+      "target": 5,
+      "reward": {
+        "gems": 30
+      }
+    },
+    {
+      "id": "player_10",
+      "name": "Veteran",
+      "text": "Reach player level 10",
+      "stat": "playerLevel",
+      "target": 10,
+      "reward": {
+        "gems": 50
+      }
+    }
+  ],
+  "campaign": {
+    "firstClearCoins": [40, 50, 60, 70, 80, 90, 100, 120],
+    "firstClearXp": [30, 35, 40, 45, 50, 55, 60, 70],
+    "gemsPerNewStar": 2,
+    "bossFirstClear": [
+      {
+        "gems": 10,
+        "chest": "silver"
+      },
+      {
+        "gems": 10,
+        "chest": "silver"
+      },
+      {
+        "gems": 15,
+        "chest": "golden"
+      },
+      {
+        "gems": 15,
+        "chest": "golden"
+      },
+      {
+        "gems": 20,
+        "chest": "golden"
+      },
+      {
+        "gems": 20,
+        "chest": "magic"
+      },
+      {
+        "gems": 25,
+        "chest": "magic"
+      },
+      {
+        "gems": 50,
+        "chest": "magic"
+      }
+    ]
+  },
+  "modes": {
+    "daily": {
+      "reward": {
+        "coins": 150,
+        "gems": 10,
+        "chest": "golden"
+      },
+      "ai": "hard",
+      "cardLevel": 3,
+      "decks": [
+        "starter_corn_fields",
+        "starter_blue_plains",
+        "starter_useless_swamp",
+        "starter_sandy_lands",
+        "starter_nice_lands",
+        "starter_corn_swamp",
+        "starter_corn_plains",
+        "starter_plains_sand",
+        "starter_nice_sand",
+        "starter_rainbow_road",
+        "boss_deck_haybale",
+        "boss_deck_glacia",
+        "boss_deck_mire",
+        "boss_deck_scorch",
+        "boss_deck_bonbon",
+        "boss_deck_vex"
+      ],
+      "enemyModifiers": [
+        "fortified",
+        "thick_hide",
+        "sharp_claws",
+        "thorny",
+        "tailwind",
+        "spell_echo",
+        "healing_springs",
+        "reinforcements",
+        "war_drums",
+        "toxic_fog",
+        "ember_rain",
+        "scholar",
+        "head_start"
+      ],
+      "playerModifiers": ["charged", "head_start", "weary", "healing_springs", "spell_echo"]
+    },
+    "gauntlet": {
+      "battles": 5,
+      "healBetween": 4,
+      "ai": ["easy", "normal", "normal", "hard", "hard"],
+      "cardLevels": [1, 2, 2, 3, 4],
+      "rewards": [
+        {
+          "coins": 40
+        },
+        {
+          "coins": 100
+        },
+        {
+          "coins": 160,
+          "dust": 20
+        },
+        {
+          "coins": 220,
+          "gems": 5,
+          "dust": 40
+        },
+        {
+          "coins": 300,
+          "gems": 10,
+          "chest": "silver"
+        },
+        {
+          "coins": 400,
+          "gems": 20,
+          "chest": "golden"
+        }
+      ]
+    },
+    "draft": {
+      "entry": {
+        "coins": 200
+      },
+      "picks": 30,
+      "maxWins": 7,
+      "maxLosses": 3,
+      "odds": {
+        "common": 0.6,
+        "uncommon": 0.25,
+        "rare": 0.11,
+        "epic": 0.03,
+        "legendary": 0.01
+      },
+      "basicsPerLandscape": 5,
+      "ai": ["normal", "normal", "normal", "hard", "hard", "hard", "hard", "nightmare", "nightmare"],
+      "cardLevel": 2,
+      "rewards": [
+        {
+          "coins": 60,
+          "dust": 20
+        },
+        {
+          "coins": 120,
+          "dust": 30
+        },
+        {
+          "coins": 180,
+          "dust": 40
+        },
+        {
+          "coins": 240,
+          "gems": 5,
+          "dust": 50
+        },
+        {
+          "coins": 300,
+          "gems": 10,
+          "chest": "silver"
+        },
+        {
+          "coins": 360,
+          "gems": 15,
+          "chest": "silver"
+        },
+        {
+          "coins": 420,
+          "gems": 25,
+          "chest": "golden"
+        },
+        {
+          "coins": 500,
+          "gems": 40,
+          "chest": "magic"
+        }
+      ]
+    },
+    "sandbox": {
+      "dummyHp": 100
+    }
+  },
+  "cosmetics": {
+    "cardBacks": [
+      {
+        "id": "classic",
+        "name": "Classic",
+        "unlock": {
+          "type": "default",
+          "value": 0
+        }
+      },
+      {
+        "id": "starry",
+        "name": "Starry Night",
+        "unlock": {
+          "type": "level",
+          "value": 5
+        }
+      },
+      {
+        "id": "checker",
+        "name": "Checkerboard",
+        "unlock": {
+          "type": "stars",
+          "value": 30
+        }
+      }
+    ]
+  }
+}

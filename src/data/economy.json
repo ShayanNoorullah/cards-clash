@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "deckSlots": 10,
+  "startingCurrencies": { "coins": 500, "gems": 20, "dust": 150 },
+  "craftCost": { "common": 40, "uncommon": 100, "rare": 300, "epic": 800, "legendary": 1600 },
+  "scrapValue": { "common": 10, "uncommon": 25, "rare": 75, "epic": 200, "legendary": 400 },
+  "maxLevel": 5,
+  "levelUp": [
+    { "toLevel": 2, "copies": 1, "coins": 100 },
+    { "toLevel": 3, "copies": 2, "coins": 300 },
+    { "toLevel": 4, "copies": 4, "coins": 800 },
+    { "toLevel": 5, "copies": 6, "coins": 2000 }
+  ]
+}

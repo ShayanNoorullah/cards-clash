@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "match": {
+    "heroMaxHp": 100,
+    "laneCount": 4,
+    "deckSize": 40,
+    "maxCopiesCommon": 3,
+    "maxCopiesUncommon": 3,
+    "maxCopiesRare": 3,
+    "maxCopiesEpic": 1,
+    "maxCopiesLegendary": 1,
+    "firstPlayerHandSize": 5,
+    "secondPlayerHandSize": 6,
+    "firstPlayerSkipsFirstDraw": true,
+    "mulligansAllowed": 1,
+    "startingMp": 2,
+    "mpPerTurn": 1,
+    "maxMp": 8,
+    "extraDrawCost": 1,
+    "extraDrawsPerTurn": 1,
+    "moveCost": 1,
+    "maxMovesPerCreaturePerTurn": 1,
+    "fatigueDamage": 5,
+    "maxHandSize": 8,
+    "ultimateChargePerDamage": 10,
+    "ultimateChargeMax": 100,
+    "maxEffectResolutionsPerAction": 200,
+    "maxTurns": 60
+  },
+  "online": {
+    "turnTimerSeconds": 60,
+    "reconnectGraceSeconds": 60,
+    "rankedCardLevel": 3
+  },
+  "cardLevels": [
+    {
+      "level": 1,
+      "atk": 0,
+      "def": 0,
+      "ability": 0
+    },
+    {
+      "level": 2,
+      "atk": 0,
+      "def": 2,
+      "ability": 0
+    },
+    {
+      "level": 3,
+      "atk": 2,
+      "def": 3,
+      "ability": 1
+    },
+    {
+      "level": 4,
+      "atk": 3,
+      "def": 5,
+      "ability": 2
+    },
+    {
+      "level": 5,
+      "atk": 5,
+      "def": 7,
+      "ability": 3
+    }
+  ]
+}

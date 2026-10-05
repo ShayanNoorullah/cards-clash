@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "notes": "Map a texture key (e.g. art-golden_sunsprout, hero-sola, card-back-classic, tile-azure) to an image path under /public. Listed images are loaded at startup and replace the procedural art for that key. Add every file to CREDITS.md and src/data/credits.json.",
+  "images": {}
+}

@@ -1,0 +1,665 @@
+{
+  "lessons": [
+    {
+      "id": "lesson1",
+      "name": "Lanes and Creatures",
+      "summary": "Play creatures, end your turn, and hit the enemy Hero.",
+      "reward": {
+        "coins": 100,
+        "xp": 40
+      },
+      "player": {
+        "name": "You",
+        "heroId": "finn",
+        "landscapes": [
+          "golden",
+          "golden",
+          "golden",
+          "golden"
+        ],
+        "cards": [
+          "travelin_farmer",
+          "cornball",
+          "husker_knight",
+          "corn_dog",
+          "rural_earl",
+          "archer_dan",
+          "cornball",
+          "travelin_farmer",
+          "corn_dog",
+          "husker_worm",
+          "rural_earl",
+          "archer_dan",
+          "husker_knight",
+          "corn_dog",
+          "travelin_farmer",
+          "husker_worm",
+          "rural_earl",
+          "cornball"
+        ]
+      },
+      "enemy": {
+        "name": "Training Dummy",
+        "heroId": "banana_guard",
+        "landscapes": [
+          "dune",
+          "dune",
+          "dune",
+          "dune"
+        ],
+        "cards": [
+          "sand_eyebat",
+          "green_cactaball",
+          "burning_hand",
+          "sand_angel",
+          "sand_eyebat",
+          "green_cactaball",
+          "burning_hand",
+          "sand_angel",
+          "sand_eyebat",
+          "green_cactaball",
+          "burning_hand",
+          "sand_angel",
+          "sand_eyebat",
+          "green_cactaball",
+          "burning_hand",
+          "sand_angel"
+        ]
+      },
+      "enemyRules": [
+        "training_dummy"
+      ],
+      "playerRules": [],
+      "enemyScript": [
+        [
+          {
+            "type": "playCard",
+            "card": "sand_eyebat",
+            "lane": 3
+          }
+        ],
+        [
+          {
+            "type": "playCard",
+            "card": "green_cactaball",
+            "lane": 1
+          }
+        ]
+      ],
+      "steps": [
+        {
+          "text": "Welcome to Cards Clash! The board has 4 lanes. Your creatures sit in the bottom row and fight whatever is straight across from them.",
+          "highlight": [
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 1
+            },
+            {
+              "kind": "lane",
+              "side": "enemy",
+              "lane": 1
+            }
+          ]
+        },
+        {
+          "text": "Cards cost MP (magic points), shown in the top-left corner of each card. You have 2 MP on your first turn and 1 more every turn after, up to 8.",
+          "highlight": [
+            {
+              "kind": "hero",
+              "side": "me"
+            }
+          ]
+        },
+        {
+          "text": "Drag the Travelin' Farmer into lane 2 (or tap it, then tap the lane).",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "travelin_farmer"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 1
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "travelin_farmer",
+            "lane": 1
+          }
+        },
+        {
+          "text": "Creatures can't attack on the turn they are played. When you end your turn, all your ready creatures attack.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "me",
+              "lane": 1
+            }
+          ]
+        },
+        {
+          "text": "Tap End Turn to pass to your opponent.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "The enemy put a Green Cactaball in front of your Farmer, so it will fight that instead of the Hero.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "me",
+              "lane": 1
+            },
+            {
+              "kind": "creature",
+              "side": "enemy",
+              "lane": 1
+            }
+          ]
+        },
+        {
+          "text": "A Sand Eyebat sits in lane 4 with nothing across from it. Play the Corn Dog there to block it: it costs 2 MP.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "corn_dog"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 3
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "corn_dog",
+            "lane": 3
+          }
+        },
+        {
+          "text": "End your turn and watch your creatures attack.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "Attacking creatures deal damage equal to their ATK (left number). A creature is destroyed when its damage reaches its DEF (right number).",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "me",
+              "lane": 3
+            }
+          ]
+        },
+        {
+          "text": "A creature with nothing across from it hits the enemy Hero directly. Keep playing creatures and ending your turn until the Training Dummy hits 0 HP. Good luck!",
+          "highlight": [
+            {
+              "kind": "hero",
+              "side": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson2",
+      "name": "Spells, Buildings and Floop",
+      "summary": "Use Floop abilities, cast spells and build behind your creatures.",
+      "reward": {
+        "coins": 100,
+        "xp": 40
+      },
+      "player": {
+        "name": "You",
+        "heroId": "princess_cookie",
+        "landscapes": [
+          "murk",
+          "murk",
+          "murk",
+          "murk"
+        ],
+        "cards": [
+          "bog_bum",
+          "corn_dome",
+          "cerebral_bloodstorm",
+          "teeth_leaf",
+          "mace_stump",
+          "hot_eyebat",
+          "bog_bum",
+          "pete_bog",
+          "mace_stump",
+          "teeth_leaf",
+          "hot_eyebat",
+          "pete_bog",
+          "bog_bum",
+          "mace_stump",
+          "teeth_leaf",
+          "hot_eyebat",
+          "pete_bog",
+          "wandering_bald_man"
+        ]
+      },
+      "enemy": {
+        "name": "Practice Squire",
+        "heroId": "jake",
+        "landscapes": [
+          "golden",
+          "golden",
+          "golden",
+          "golden"
+        ],
+        "cards": [
+          "husker_worm",
+          "patchy_the_pumpkin",
+          "cornball",
+          "archer_dan",
+          "husker_knight",
+          "corn_dog",
+          "cornball",
+          "husker_worm",
+          "travelin_farmer",
+          "archer_dan",
+          "husker_knight",
+          "corn_dog",
+          "cornball",
+          "husker_worm",
+          "travelin_farmer",
+          "rural_earl"
+        ]
+      },
+      "enemyRules": [
+        "training_target"
+      ],
+      "playerRules": [],
+      "enemyScript": [
+        [
+          {
+            "type": "playCard",
+            "card": "husker_worm",
+            "lane": 1
+          }
+        ],
+        [
+          {
+            "type": "playCard",
+            "card": "patchy_the_pumpkin",
+            "lane": 0
+          }
+        ]
+      ],
+      "steps": [
+        {
+          "text": "This lesson covers Floop abilities, buildings and spells. Start by playing the Bog Bum in lane 2.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "bog_bum"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 1
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "bog_bum",
+            "lane": 1
+          }
+        },
+        {
+          "text": "End your turn.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "A Husker Worm (3/5) is blocking your Bog Bum. Every creature has a Floop ability: pay its cost and the creature uses its power instead of attacking this turn.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "enemy",
+              "lane": 1
+            }
+          ]
+        },
+        {
+          "text": "Tap your Bog Bum and choose Floop: it deals 5 damage to the creature across from it.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "me",
+              "lane": 1
+            }
+          ],
+          "expect": {
+            "type": "floop",
+            "lane": 1
+          }
+        },
+        {
+          "text": "Buildings sit behind your creatures and boost whoever is in their lane. Put the Corn Dome in lane 2 for +3 ATK.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "corn_dome"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 1
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "corn_dome",
+            "lane": 1
+          }
+        },
+        {
+          "text": "Your Bog Bum is exhausted from flooping, so it won't attack this turn. End your turn.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "Uh oh, Patchy the Pumpkin hits for 22! Spells happen right away and then go to the discard pile. Cast Cerebral Bloodstorm on it: it deals damage equal to its own ATK.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "cerebral_bloodstorm"
+            },
+            {
+              "kind": "creature",
+              "side": "enemy",
+              "lane": 0
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "cerebral_bloodstorm",
+            "target": {
+              "kind": "creature",
+              "side": "enemy",
+              "lane": 0
+            }
+          }
+        },
+        {
+          "text": "Teeth Leaf can Floop to hit the enemy Hero directly. Play it in lane 3.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "teeth_leaf"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 2
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "teeth_leaf",
+            "lane": 2
+          }
+        },
+        {
+          "text": "Long-press any card or creature to read it in detail. Now use everything you have learned to defeat the Practice Squire!",
+          "highlight": [
+            {
+              "kind": "hero",
+              "side": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson3",
+      "name": "Landscapes, Moves and Hero Abilities",
+      "summary": "Landscape requirements, moving creatures, buying cards and your Hero Ability.",
+      "reward": {
+        "coins": 150,
+        "gems": 20,
+        "xp": 60
+      },
+      "player": {
+        "name": "You",
+        "heroId": "marceline",
+        "landscapes": [
+          "golden",
+          "golden",
+          "azure",
+          "azure"
+        ],
+        "cards": [
+          "cool_dog",
+          "archer_dan",
+          "spectre_hector",
+          "corn_dog",
+          "heavenly_gazer",
+          "axey",
+          "rural_earl",
+          "cool_dog",
+          "archer_dan",
+          "spectre_hector",
+          "corn_dog",
+          "heavenly_gazer",
+          "axey",
+          "rural_earl",
+          "husker_knight",
+          "temporal_wisp",
+          "patchy_the_pumpkin",
+          "cornball"
+        ]
+      },
+      "enemy": {
+        "name": "Sparring Partner",
+        "heroId": "cinnamon_bun",
+        "landscapes": [
+          "candy",
+          "candy",
+          "candy",
+          "candy"
+        ],
+        "cards": [
+          "snuggle_tree",
+          "fluffapillar",
+          "angel_heart",
+          "snake_mint",
+          "music_mallard",
+          "blueberry_djini",
+          "snuggle_tree",
+          "fluffapillar",
+          "angel_heart",
+          "snake_mint",
+          "music_mallard",
+          "blueberry_djini",
+          "snuggle_tree",
+          "fluffapillar",
+          "angel_heart",
+          "snake_mint"
+        ]
+      },
+      "enemyRules": [
+        "training_target"
+      ],
+      "playerRules": [
+        "training_ultimate"
+      ],
+      "enemyScript": [
+        [
+          {
+            "type": "playCard",
+            "card": "snuggle_tree",
+            "lane": 0
+          }
+        ],
+        [
+          {
+            "type": "playCard",
+            "card": "fluffapillar",
+            "lane": 2
+          },
+          {
+            "type": "playCard",
+            "card": "angel_heart",
+            "lane": 1
+          }
+        ]
+      ],
+      "steps": [
+        {
+          "text": "Each creature needs at least one landscape of its own land on your side. You have 2 Corn Fields and 2 Blue Plains, so you can play Corn and Plains creatures. Rainbow cards go anywhere.",
+          "highlight": [
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 2
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 3
+            }
+          ]
+        },
+        {
+          "text": "Short on cards? Tap your deck to pay 1 MP and draw an extra card (once per turn).",
+          "highlight": [
+            {
+              "kind": "deck"
+            }
+          ],
+          "expect": {
+            "type": "buyDraw"
+          }
+        },
+        {
+          "text": "Play the Cool Dog (a Blue Plains creature) in lane 1.",
+          "highlight": [
+            {
+              "kind": "hand",
+              "card": "cool_dog"
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 0
+            }
+          ],
+          "expect": {
+            "type": "playCard",
+            "card": "cool_dog",
+            "lane": 0
+          }
+        },
+        {
+          "text": "End your turn.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "The enemy blocked your Cool Dog with a Snuggle Tree. Lane 4 is wide open, though.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "enemy",
+              "lane": 0
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 3
+            }
+          ]
+        },
+        {
+          "text": "Move your Cool Dog to the open lane: tap it, choose Move (1 MP) and pick lane 4.",
+          "highlight": [
+            {
+              "kind": "creature",
+              "side": "me",
+              "lane": 0
+            },
+            {
+              "kind": "lane",
+              "side": "me",
+              "lane": 3
+            }
+          ],
+          "expect": {
+            "type": "moveCreature",
+            "from": 0,
+            "to": 3
+          }
+        },
+        {
+          "text": "Every Hero has a Hero Ability that recharges over a few of your turns. Today it starts ready! Tap your Hero to use Marceline's: all your creatures gain +2 Attack.",
+          "highlight": [
+            {
+              "kind": "hero",
+              "side": "me"
+            }
+          ],
+          "expect": {
+            "type": "useUltimate"
+          }
+        },
+        {
+          "text": "End your turn.",
+          "highlight": [
+            {
+              "kind": "endTurn"
+            }
+          ],
+          "expect": {
+            "type": "endTurn"
+          }
+        },
+        {
+          "text": "That's everything! Defeat your Sparring Partner to finish training. After that, the campaign awaits.",
+          "highlight": [
+            {
+              "kind": "hero",
+              "side": "enemy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

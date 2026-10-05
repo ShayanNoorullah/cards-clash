@@ -1,0 +1,32 @@
+{
+  "keywords": [
+    { "id": "rush", "name": "Rush", "valued": false, "icon": "rush", "description": "Can attack the turn it is played." },
+    { "id": "guard", "name": "Guard", "valued": false, "icon": "guard", "description": "When an enemy attacks an empty lane next to this creature, this creature blocks instead of your Hero." },
+    { "id": "ranged", "name": "Ranged", "valued": false, "icon": "ranged", "description": "Ignores Guard, and takes no damage from Thorns or Counter." },
+    { "id": "lifesteal", "name": "Lifesteal", "valued": false, "icon": "lifesteal", "description": "Combat damage this creature deals also heals your Hero." },
+    { "id": "thorns", "name": "Thorns", "valued": true, "icon": "thorns", "description": "When attacked, deals X damage to the attacker, even if this creature is destroyed." },
+    { "id": "counter", "name": "Counter", "valued": false, "icon": "counter", "description": "When attacked and it survives, strikes back with its full ATK." },
+    { "id": "shield", "name": "Shield", "valued": false, "icon": "shield", "description": "Blocks the next damage completely, then breaks." },
+    { "id": "poison", "name": "Poison", "valued": true, "icon": "poison", "description": "Creatures damaged by this one are poisoned for X. A poisoned creature takes that much damage at the start of its owner's turn, then the poison drops by 1." },
+    { "id": "regenerate", "name": "Regenerate", "valued": true, "icon": "regenerate", "description": "Heals X damage at the start of your turn." },
+    { "id": "swift", "name": "Swift", "valued": false, "icon": "swift", "description": "Moving this creature costs no MP." },
+    { "id": "stealth", "name": "Stealth", "valued": false, "icon": "stealth", "description": "Your opponent cannot target it with spells or abilities until it attacks." },
+    { "id": "feast", "name": "Feast", "valued": true, "icon": "lifesteal", "description": "Heals X damage whenever it destroys a creature in combat." }
+  ],
+  "statuses": [
+    { "id": "frozen", "name": "Frozen", "icon": "frozen", "description": "Cannot attack or floop. Thaws at the end of its owner's turn." },
+    { "id": "flipped", "name": "Flipped", "icon": "flipped", "description": "This landscape counts as no type and cannot receive new cards. It returns at the end of its owner's next turn." }
+  ],
+  "triggers": [
+    { "id": "onPlay", "name": "On Play", "description": "Happens when this card is played." },
+    { "id": "onDestroy", "name": "On Destroy", "description": "Happens when this creature is destroyed." },
+    { "id": "startOfTurn", "name": "Start of Turn", "description": "Happens at the start of your turn." },
+    { "id": "endOfTurn", "name": "End of Turn", "description": "Happens at the end of your turn." },
+    { "id": "onAttack", "name": "On Attack", "description": "Happens when this creature attacks, before damage." },
+    { "id": "onDamaged", "name": "When Damaged", "description": "Happens when this creature takes damage and survives." },
+    { "id": "onAllyCreaturePlayed", "name": "Ally Played", "description": "Happens when you play another creature." },
+    { "id": "onAllyCreatureDestroyed", "name": "Ally Destroyed", "description": "Happens when another of your creatures is destroyed." },
+    { "id": "onEnemyCreatureDestroyed", "name": "Enemy Destroyed", "description": "Happens when an enemy creature is destroyed." },
+    { "id": "onSpellCast", "name": "Spell Cast", "description": "Happens when you cast a spell." }
+  ]
+}

@@ -1,0 +1,455 @@
+[
+  {
+    "id": "golden_sprout",
+    "name": "Sunsprout Scout",
+    "type": "creature",
+    "landscape": "golden",
+    "requirements": [
+      {
+        "landscape": "golden",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "atk": 1,
+    "def": 3,
+    "rarity": "common",
+    "keywords": [],
+    "flavorText": "Small, bright, and always first to the field.",
+    "artKey": "golden_sprout",
+    "text": ""
+  },
+  {
+    "id": "golden_knight",
+    "name": "Haybale Knight",
+    "type": "creature",
+    "landscape": "golden",
+    "requirements": [
+      {
+        "landscape": "golden",
+        "count": 2
+      }
+    ],
+    "cost": 3,
+    "atk": 3,
+    "def": 5,
+    "rarity": "uncommon",
+    "keywords": [],
+    "flavorText": "Sworn to guard every last stalk of wheat.",
+    "artKey": "golden_knight",
+    "text": ""
+  },
+  {
+    "id": "golden_banner",
+    "name": "Harvest Banner",
+    "type": "building",
+    "landscape": "golden",
+    "requirements": [
+      {
+        "landscape": "golden",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "rarity": "common",
+    "text": "The creature in this lane has +1 ATK and +1 DEF.",
+    "flavorText": "It flaps a little harder when you win.",
+    "artKey": "golden_banner",
+    "statics": [
+      {
+        "kind": "stat",
+        "scope": "lane",
+        "atk": 1,
+        "def": 1
+      }
+    ]
+  },
+  {
+    "id": "golden_blessing",
+    "name": "Sunlit Blessing",
+    "type": "spell",
+    "landscape": "golden",
+    "requirements": [
+      {
+        "landscape": "golden",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "rarity": "common",
+    "text": "Give an allied creature +2 ATK and +2 DEF.",
+    "effects": [
+      {
+        "type": "buff",
+        "target": "chosenAllyCreature",
+        "atk": 2,
+        "def": 2
+      }
+    ],
+    "flavorText": "Warm light, warmer courage.",
+    "artKey": "golden_blessing"
+  },
+  {
+    "id": "azure_wisp",
+    "name": "Frostmote Wisp",
+    "type": "creature",
+    "landscape": "azure",
+    "requirements": [
+      {
+        "landscape": "azure",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "atk": 1,
+    "def": 2,
+    "rarity": "common",
+    "keywords": ["swift"],
+    "flavorText": "Drifts wherever the cold wind points.",
+    "artKey": "azure_wisp",
+    "text": "Swift."
+  },
+  {
+    "id": "azure_sentinel",
+    "name": "Glacier Sentinel",
+    "type": "creature",
+    "landscape": "azure",
+    "requirements": [
+      {
+        "landscape": "azure",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "atk": 1,
+    "def": 6,
+    "rarity": "uncommon",
+    "keywords": [],
+    "floop": {
+      "cost": 1,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ownHero",
+          "amount": 2
+        }
+      ]
+    },
+    "flavorText": "It has been standing still for a thousand winters.",
+    "artKey": "azure_sentinel",
+    "text": "Floop (1 MP): Heal your Hero 2."
+  },
+  {
+    "id": "azure_insight",
+    "name": "Ripple of Insight",
+    "type": "spell",
+    "landscape": "azure",
+    "requirements": [
+      {
+        "landscape": "azure",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "rarity": "common",
+    "text": "Draw 2 cards.",
+    "effects": [
+      {
+        "type": "draw",
+        "amount": 2
+      }
+    ],
+    "flavorText": "Still water shows what is coming.",
+    "artKey": "azure_insight"
+  },
+  {
+    "id": "ember_imp",
+    "name": "Cinder Imp",
+    "type": "creature",
+    "landscape": "ember",
+    "requirements": [
+      {
+        "landscape": "ember",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "atk": 2,
+    "def": 1,
+    "rarity": "common",
+    "keywords": ["rush"],
+    "flavorText": "It was already running before it was born.",
+    "artKey": "ember_imp",
+    "text": "Rush."
+  },
+  {
+    "id": "ember_brute",
+    "name": "Magma Brute",
+    "type": "creature",
+    "landscape": "ember",
+    "requirements": [
+      {
+        "landscape": "ember",
+        "count": 2
+      }
+    ],
+    "cost": 3,
+    "atk": 5,
+    "def": 3,
+    "rarity": "epic",
+    "keywords": [],
+    "flavorText": "Leaves footprints that stay warm for days.",
+    "artKey": "ember_brute",
+    "text": ""
+  },
+  {
+    "id": "ember_bolt",
+    "name": "Ember Bolt",
+    "type": "spell",
+    "landscape": "ember",
+    "requirements": [
+      {
+        "landscape": "ember",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "rarity": "common",
+    "text": "Deal 3 damage to a creature.",
+    "effects": [
+      {
+        "type": "damage",
+        "target": "chosenCreature",
+        "amount": 3
+      }
+    ],
+    "flavorText": "Point hot end at problem.",
+    "artKey": "ember_bolt"
+  },
+  {
+    "id": "ember_forge",
+    "name": "Blazing Forge",
+    "type": "building",
+    "landscape": "ember",
+    "requirements": [
+      {
+        "landscape": "ember",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "The creature in this lane has +2 ATK.",
+    "flavorText": "Every blade made here comes out angry.",
+    "artKey": "ember_forge",
+    "statics": [
+      {
+        "kind": "stat",
+        "scope": "lane",
+        "atk": 2,
+        "def": 0
+      }
+    ]
+  },
+  {
+    "id": "dune_scorpion",
+    "name": "Dunestinger",
+    "type": "creature",
+    "landscape": "dune",
+    "requirements": [
+      {
+        "landscape": "dune",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "atk": 2,
+    "def": 3,
+    "rarity": "common",
+    "keywords": [],
+    "floop": {
+      "cost": 1,
+      "effects": [
+        {
+          "type": "damage",
+          "target": "opposingCreature",
+          "amount": 2
+        }
+      ]
+    },
+    "flavorText": "Hides under the sand, strikes from beneath.",
+    "artKey": "dune_scorpion",
+    "text": "Floop (1 MP): Deal 2 damage to the opposing creature."
+  },
+  {
+    "id": "dune_blast",
+    "name": "Sunscorch Blast",
+    "type": "spell",
+    "landscape": "dune",
+    "requirements": [
+      {
+        "landscape": "dune",
+        "count": 2
+      }
+    ],
+    "cost": 2,
+    "rarity": "uncommon",
+    "text": "Deal 3 damage to the enemy Hero.",
+    "effects": [
+      {
+        "type": "damage",
+        "target": "enemyHero",
+        "amount": 3
+      }
+    ],
+    "flavorText": "The desert sun, focused to a point.",
+    "artKey": "dune_blast"
+  },
+  {
+    "id": "dune_sandstorm",
+    "name": "Sandstorm",
+    "type": "spell",
+    "landscape": "dune",
+    "requirements": [
+      {
+        "landscape": "dune",
+        "count": 1
+      }
+    ],
+    "cost": 3,
+    "rarity": "rare",
+    "text": "Deal 2 damage to every enemy creature.",
+    "effects": [
+      {
+        "type": "damage",
+        "target": "allEnemyCreatures",
+        "amount": 2
+      }
+    ],
+    "flavorText": "Nobody sees it coming. Nobody sees anything.",
+    "artKey": "dune_sandstorm"
+  },
+  {
+    "id": "murk_slime",
+    "name": "Bogmire Slime",
+    "type": "creature",
+    "landscape": "murk",
+    "requirements": [
+      {
+        "landscape": "murk",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "atk": 3,
+    "def": 3,
+    "rarity": "common",
+    "keywords": [],
+    "flavorText": "It ate a boot once. It is still chewing.",
+    "artKey": "murk_slime",
+    "text": ""
+  },
+  {
+    "id": "murk_hex",
+    "name": "Withering Hex",
+    "type": "spell",
+    "landscape": "murk",
+    "requirements": [
+      {
+        "landscape": "murk",
+        "count": 1
+      }
+    ],
+    "cost": 1,
+    "rarity": "common",
+    "text": "Give an enemy creature -2 ATK and -2 DEF.",
+    "effects": [
+      {
+        "type": "buff",
+        "target": "chosenEnemyCreature",
+        "atk": -2,
+        "def": -2
+      }
+    ],
+    "flavorText": "The bog remembers every grudge.",
+    "artKey": "murk_hex"
+  },
+  {
+    "id": "candy_healer",
+    "name": "Gumdrop Medic",
+    "type": "creature",
+    "landscape": "candy",
+    "requirements": [
+      {
+        "landscape": "candy",
+        "count": 1
+      }
+    ],
+    "cost": 2,
+    "atk": 1,
+    "def": 4,
+    "rarity": "common",
+    "keywords": [],
+    "floop": {
+      "cost": 0,
+      "effects": [
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": 2
+        }
+      ]
+    },
+    "flavorText": "Sugar-coated bandages for every bruise.",
+    "artKey": "candy_healer",
+    "text": "Floop (0 MP): Heal all your creatures 2."
+  },
+  {
+    "id": "neutral_wanderer",
+    "name": "Roadside Wanderer",
+    "type": "creature",
+    "landscape": "neutral",
+    "requirements": [],
+    "cost": 2,
+    "atk": 2,
+    "def": 2,
+    "rarity": "common",
+    "keywords": [],
+    "flavorText": "Belongs nowhere, fights everywhere.",
+    "artKey": "neutral_wanderer",
+    "text": ""
+  },
+  {
+    "id": "neutral_mana_gem",
+    "name": "Pocket Mana Gem",
+    "type": "spell",
+    "landscape": "neutral",
+    "requirements": [],
+    "cost": 1,
+    "rarity": "common",
+    "text": "Gain 2 MP.",
+    "effects": [
+      {
+        "type": "gainMp",
+        "amount": 2
+      }
+    ],
+    "flavorText": "Shake it. Hear the sparkle.",
+    "artKey": "neutral_mana_gem"
+  },
+  {
+    "id": "neutral_titan",
+    "name": "Hollowpeak Titan",
+    "type": "creature",
+    "landscape": "neutral",
+    "requirements": [],
+    "cost": 6,
+    "atk": 7,
+    "def": 7,
+    "rarity": "legendary",
+    "keywords": [],
+    "flavorText": "Mountains stand up when it walks past.",
+    "artKey": "neutral_titan",
+    "text": ""
+  }
+]

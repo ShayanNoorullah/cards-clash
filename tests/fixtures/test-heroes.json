@@ -1,0 +1,25 @@
+[
+  {
+    "id": "test_hero",
+    "name": "Test Hero",
+    "title": "Rules Tester",
+    "landscape": "neutral",
+    "flavorText": "Exists only in tests.",
+    "artKey": "hero_test",
+    "passive": {
+      "name": "None",
+      "text": "No passive."
+    },
+    "ultimate": {
+      "name": "Test Blast",
+      "text": "Deal 5 damage to the enemy Hero.",
+      "effects": [
+        {
+          "type": "damage",
+          "target": "enemyHero",
+          "amount": 5
+        }
+      ]
+    }
+  }
+]

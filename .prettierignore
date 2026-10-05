@@ -1,0 +1,16 @@
+dist
+node_modules
+package-lock.json
+android
+ios
+# Content files are kept compact: one card / deck entry per line.
+src/data/cards.json
+src/data/starter-decks.json
+src/data/keywords.json
+src/data/campaign.json
+src/data/campaign-decks.json
+src/data/tutorial.json
+server/supabase/functions/_shared/game.js
+server/supabase/.temp
+public
+CARD INFO EXTRACTOR

@@ -1,0 +1,195 @@
+[
+  { "id": "fortified", "name": "Fortified", "text": "This Hero starts with +20 HP.", "heroHpDelta": 20 },
+  { "id": "stronghold", "name": "Stronghold", "text": "This Hero starts with +40 HP.", "heroHpDelta": 40 },
+  { "id": "weary", "name": "Weary", "text": "This Hero starts with -20 HP.", "heroHpDelta": -20 },
+  { "id": "head_start", "name": "Head Start", "text": "Starts with 1 extra card in hand.", "extraCards": 1 },
+  {
+    "id": "charged",
+    "name": "Charged Up",
+    "text": "The Hero Ability starts 50% charged.",
+    "startingCharge": 50
+  },
+  {
+    "id": "thick_hide",
+    "name": "Thick Hide",
+    "text": "Creatures have +4 DEF.",
+    "statics": [{ "kind": "stat", "scope": "allAllies", "atk": 0, "def": 4 }]
+  },
+  {
+    "id": "sharp_claws",
+    "name": "Sharp Claws",
+    "text": "Creatures have +3 ATK.",
+    "statics": [{ "kind": "stat", "scope": "allAllies", "atk": 3, "def": 0 }]
+  },
+  {
+    "id": "thorny",
+    "name": "Bramble Armor",
+    "text": "Creatures have Thorns 3.",
+    "statics": [{ "kind": "keyword", "scope": "allAllies", "keyword": "thorns:3" }]
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind",
+    "text": "Creatures have Swift.",
+    "statics": [{ "kind": "keyword", "scope": "allAllies", "keyword": "swift" }]
+  },
+  {
+    "id": "spell_echo",
+    "name": "Arcane Echo",
+    "text": "Spells deal 3 extra damage.",
+    "statics": [{ "kind": "spellPower", "amount": 3 }]
+  },
+  {
+    "id": "healing_springs",
+    "name": "Healing Springs",
+    "text": "Start of Turn: Heal this Hero 4.",
+    "abilities": [
+      { "trigger": "startOfTurn", "effects": [{ "type": "heal", "target": "ownHero", "amount": 4 }] }
+    ]
+  },
+  {
+    "id": "reinforcements",
+    "name": "Reinforcements",
+    "text": "Start of Turn: A random allied creature gets +0/+4.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "buff", "target": "randomAllyCreature", "atk": 0, "def": 4 }]
+      }
+    ]
+  },
+  {
+    "id": "war_drums",
+    "name": "War Drums",
+    "text": "Start of Turn: Creatures get +3 ATK this turn.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "buff", "target": "allAllyCreatures", "atk": 3, "def": 0, "temporary": true }]
+      }
+    ]
+  },
+  {
+    "id": "toxic_fog",
+    "name": "Toxic Fog",
+    "text": "Start of Turn: Poison a random enemy creature for 3.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "poison", "target": "randomEnemyCreature", "amount": 3 }]
+      }
+    ]
+  },
+  {
+    "id": "ember_rain",
+    "name": "Ember Rain",
+    "text": "Start of Turn: Deal 3 damage to a random enemy creature.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "damage", "target": "randomEnemyCreature", "amount": 3 }]
+      }
+    ]
+  },
+  {
+    "id": "scholar",
+    "name": "Scholar",
+    "text": "Start of Turn: If this player has 2 or fewer cards in hand, draw a card.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "condition": { "type": "handSizeAtMost", "value": 2 },
+        "effects": [{ "type": "draw", "amount": 1 }]
+      }
+    ]
+  },
+  {
+    "id": "boss_harvest_moon",
+    "name": "Harvest Moon",
+    "text": "Start of Turn: A random allied creature gets +2/+3.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "buff", "target": "randomAllyCreature", "atk": 2, "def": 3 }]
+      }
+    ]
+  },
+  {
+    "id": "boss_endless_winter",
+    "name": "Endless Winter",
+    "text": "Start of Turn: Freeze a random enemy creature.",
+    "abilities": [
+      { "trigger": "startOfTurn", "effects": [{ "type": "freeze", "target": "randomEnemyCreature" }] }
+    ]
+  },
+  {
+    "id": "boss_plague_tide",
+    "name": "Plague Tide",
+    "text": "Start of Turn: Poison all enemy creatures for 2.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "poison", "target": "allEnemyCreatures", "amount": 2 }]
+      }
+    ]
+  },
+  {
+    "id": "boss_sandstorm",
+    "name": "Endless Sandstorm",
+    "text": "Start of Turn: Deal 3 damage to the enemy Hero.",
+    "abilities": [
+      { "trigger": "startOfTurn", "effects": [{ "type": "damage", "target": "enemyHero", "amount": 3 }] }
+    ]
+  },
+  {
+    "id": "boss_sugar_coating",
+    "name": "Sugar Coating",
+    "text": "Creatures have +0/+5. This Hero starts with +20 HP.",
+    "heroHpDelta": 20,
+    "statics": [{ "kind": "stat", "scope": "allAllies", "atk": 0, "def": 5 }]
+  },
+  {
+    "id": "boss_wildfire",
+    "name": "Wildfire",
+    "text": "Start of Turn: Deal 2 damage to all enemy creatures.",
+    "abilities": [
+      {
+        "trigger": "startOfTurn",
+        "effects": [{ "type": "damage", "target": "allEnemyCreatures", "amount": 2 }]
+      }
+    ]
+  },
+  {
+    "id": "boss_chaos_rift",
+    "name": "Chaos Rift",
+    "text": "Start of Turn: Flip a random enemy landscape.",
+    "abilities": [
+      { "trigger": "startOfTurn", "effects": [{ "type": "flip", "target": "randomEnemyLandscape" }] }
+    ]
+  },
+  {
+    "id": "boss_crown_of_ages",
+    "name": "Crown of Ages",
+    "text": "This Hero starts with +50 HP. Start of Turn: Charge the Hero Ability by 20%.",
+    "heroHpDelta": 50,
+    "abilities": [{ "trigger": "startOfTurn", "effects": [{ "type": "chargeUltimate", "amount": 20 }] }]
+  },
+  {
+    "id": "training_dummy",
+    "name": "Training Dummy",
+    "text": "This Hero starts with only 30 HP.",
+    "heroHpDelta": -70
+  },
+  {
+    "id": "training_target",
+    "name": "Practice Target",
+    "text": "This Hero starts with only 45 HP.",
+    "heroHpDelta": -55
+  },
+  {
+    "id": "training_ultimate",
+    "name": "Fully Charged",
+    "text": "The Hero Ability starts fully charged.",
+    "startingCharge": 100
+  }
+]

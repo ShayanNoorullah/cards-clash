@@ -1,0 +1,21 @@
+node_modules
+dist
+coverage
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+android/app/build
+android/.gradle
+*.keystore
+*.jks
+
+# Release outputs
+release/
+# Generated app icon sources are kept; Android signing secrets are not
+android/keystore.properties
+*.jks
+*.keystore
+# Card source tool (700 MB with its Python env); the game uses the imported copies in src/data and public/cards
+CARD INFO EXTRACTOR/

@@ -1,0 +1,71 @@
+{
+  "weights": {
+    "heroHp": 1.2,
+    "enemyLowHpBonus": 0.35,
+    "creatureAtk": 1.1,
+    "creatureDef": 0.7,
+    "keyword": 0.6,
+    "pressure": 0.9,
+    "lethalThreat": 14,
+    "card": 0.9,
+    "deckOut": 0.8,
+    "charge": 0.03,
+    "building": 1.6,
+    "flippedEnemyLandscape": 0.8,
+    "frozenPenalty": 0.5,
+    "poisonPenalty": 0.8
+  },
+  "profiles": {
+    "easy": {
+      "name": "Easy",
+      "depth": 1,
+      "beam": 1,
+      "temperature": 6,
+      "topK": 5,
+      "mistakeRate": 0.45,
+      "maxEvaluations": 150,
+      "timeBudgetMs": 150,
+      "lookaheadOpponentCombat": false,
+      "weightScale": {
+        "pressure": 0.3,
+        "lethalThreat": 0.2
+      }
+    },
+    "normal": {
+      "name": "Normal",
+      "depth": 2,
+      "beam": 3,
+      "temperature": 0.8,
+      "topK": 3,
+      "mistakeRate": 0.1,
+      "maxEvaluations": 800,
+      "timeBudgetMs": 400,
+      "lookaheadOpponentCombat": true
+    },
+    "hard": {
+      "name": "Hard",
+      "depth": 2,
+      "beam": 5,
+      "temperature": 0.15,
+      "topK": 2,
+      "mistakeRate": 0.02,
+      "maxEvaluations": 2000,
+      "timeBudgetMs": 800,
+      "lookaheadOpponentCombat": true,
+      "weightScale": {
+        "pressure": 1.5
+      }
+    },
+    "nightmare": {
+      "name": "Nightmare",
+      "depth": 3,
+      "beam": 6,
+      "temperature": 0,
+      "topK": 1,
+      "mistakeRate": 0,
+      "maxEvaluations": 5000,
+      "timeBudgetMs": 1000,
+      "lookaheadOpponentCombat": true
+    }
+  }
+}

@@ -1,0 +1,615 @@
+[
+  {
+    "id": "sola",
+    "name": "Sola Brightmantle",
+    "title": "Warden of the Golden Fields",
+    "landscape": "golden",
+    "flavorText": "She has never lost a harvest, and never lost a fight.",
+    "artKey": "hero_sola",
+    "passive": {
+      "name": "Golden Glow",
+      "text": "Your creatures on Golden Fields have +1 DEF.",
+      "statics": [
+        {
+          "kind": "stat",
+          "scope": "allAllies",
+          "atk": 0,
+          "def": 1,
+          "onLandscape": "golden"
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Harvest Festival",
+      "text": "Give your creatures +1/+2.",
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 1,
+          "def": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "nyla",
+    "name": "Nyla Frostwarden",
+    "title": "Keeper of the Azure Meadows",
+    "landscape": "azure",
+    "flavorText": "Patient as a glacier. Just as hard to move.",
+    "artKey": "hero_nyla",
+    "passive": {
+      "name": "Frost Focus",
+      "text": "Whenever you cast a spell, charge your Ultimate by 25%.",
+      "abilities": [
+        {
+          "trigger": "onSpellCast",
+          "effects": [
+            {
+              "type": "chargeUltimate",
+              "amount": 25
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Glacial Tomb",
+      "text": "Freeze all enemy creatures and deal 1 damage to each. Draw 2 cards.",
+      "effects": [
+        {
+          "type": "freeze",
+          "target": "allEnemyCreatures"
+        },
+        {
+          "type": "damage",
+          "target": "allEnemyCreatures",
+          "amount": 1
+        },
+        {
+          "type": "draw",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "grimble",
+    "name": "Grimble",
+    "title": "Witch of the Murk Bog",
+    "landscape": "murk",
+    "flavorText": "Her soup is always bubbling. Nobody asks what is in it.",
+    "artKey": "hero_grimble",
+    "passive": {
+      "name": "Bog Blessing",
+      "text": "Your creatures on Murk Bog have Poison 1.",
+      "statics": [
+        {
+          "kind": "keyword",
+          "scope": "allAllies",
+          "keyword": "poison:1",
+          "onLandscape": "murk"
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Rot Tide",
+      "text": "Poison two random enemy creatures for 2. Your opponent discards a random card.",
+      "effects": [
+        {
+          "type": "poison",
+          "target": "randomEnemyCreature",
+          "amount": 2,
+          "count": 2
+        },
+        {
+          "type": "discard",
+          "amount": 1,
+          "who": "enemy"
+        }
+      ]
+    }
+  },
+  {
+    "id": "rask",
+    "name": "Rask Dunestrider",
+    "title": "Nomad of the Dune Wastes",
+    "landscape": "dune",
+    "flavorText": "He walked across the desert once. The desert still talks about it.",
+    "artKey": "hero_rask",
+    "passive": {
+      "name": "Scorching Sun",
+      "text": "Your spells deal 1 extra damage.",
+      "statics": [
+        {
+          "kind": "spellPower",
+          "amount": 1
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Meteor Call",
+      "text": "Deal 4 damage to the enemy Hero and 1 damage to all enemy creatures.",
+      "effects": [
+        {
+          "type": "damage",
+          "target": "enemyHero",
+          "amount": 4
+        },
+        {
+          "type": "damage",
+          "target": "allEnemyCreatures",
+          "amount": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": "pip",
+    "name": "Pip Sugarbloom",
+    "title": "Heart of the Candy Grove",
+    "landscape": "candy",
+    "flavorText": "Small, sweet, and absolutely unbreakable.",
+    "artKey": "hero_pip",
+    "passive": {
+      "name": "Sweet Tooth",
+      "text": "End of Turn: Heal your Hero 1.",
+      "abilities": [
+        {
+          "trigger": "endOfTurn",
+          "effects": [
+            {
+              "type": "heal",
+              "target": "ownHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Sugar Rush",
+      "text": "Heal your Hero 6. Give all your creatures Shield.",
+      "effects": [
+        {
+          "type": "heal",
+          "target": "ownHero",
+          "amount": 6
+        },
+        {
+          "type": "shield",
+          "target": "allAllyCreatures"
+        }
+      ]
+    }
+  },
+  {
+    "id": "vulka",
+    "name": "Vulka Cinderheart",
+    "title": "Champion of the Ember Rocks",
+    "landscape": "ember",
+    "flavorText": "She was born in a volcano and has been hot-headed ever since.",
+    "artKey": "hero_vulka",
+    "passive": {
+      "name": "Kindled Fury",
+      "text": "Start of Turn: If you control 3 or more creatures, deal 1 damage to the enemy Hero.",
+      "abilities": [
+        {
+          "trigger": "startOfTurn",
+          "condition": {
+            "type": "creatureCountAtLeast",
+            "who": "self",
+            "value": 3
+          },
+          "effects": [
+            {
+              "type": "damage",
+              "target": "enemyHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Eruption",
+      "text": "Deal 2 damage to all enemy creatures.",
+      "effects": [
+        {
+          "type": "damage",
+          "target": "allEnemyCreatures",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "oaken",
+    "name": "Old Oaken",
+    "title": "The Wandering Tree",
+    "landscape": "neutral",
+    "flavorText": "He has walked every road in every land, very, very slowly.",
+    "artKey": "hero_oaken",
+    "passive": {
+      "name": "Old Roots",
+      "text": "Your creatures have +1 DEF. Whenever one of your creatures is destroyed, charge your Ultimate by 20%.",
+      "statics": [
+        {
+          "kind": "stat",
+          "scope": "allAllies",
+          "atk": 0,
+          "def": 1
+        }
+      ],
+      "abilities": [
+        {
+          "trigger": "onAllyCreatureDestroyed",
+          "effects": [
+            {
+              "type": "chargeUltimate",
+              "amount": 20
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Second Wind",
+      "text": "Give your creatures +1/+1. Draw 2 cards.",
+      "effects": [
+        {
+          "type": "buff",
+          "target": "allAllyCreatures",
+          "atk": 1,
+          "def": 1
+        },
+        {
+          "type": "draw",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "maestra",
+    "name": "Maestra Vex",
+    "title": "The Landshaper",
+    "landscape": "neutral",
+    "flavorText": "She conducts the land like an orchestra, and the land plays along.",
+    "artKey": "hero_maestra",
+    "passive": {
+      "name": "Steady Ground",
+      "text": "Start of Turn: Restore all your flipped landscapes and heal your Hero 1.",
+      "abilities": [
+        {
+          "trigger": "startOfTurn",
+          "effects": [
+            {
+              "type": "restore",
+              "target": "allAllyLandscapes"
+            },
+            {
+              "type": "heal",
+              "target": "ownHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Shifting Earth",
+      "text": "Flip all enemy landscapes until the end of their owner's next turn. Draw 2 cards.",
+      "effects": [
+        {
+          "type": "flip",
+          "target": "allEnemyLandscapes"
+        },
+        {
+          "type": "draw",
+          "amount": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "boss_haybale",
+    "name": "Baron Haybale",
+    "title": "Lord of the Scarecrow Rows",
+    "landscape": "golden",
+    "flavorText": "He was stuffed with straw and ambition, in that order.",
+    "artKey": "hero_boss_haybale",
+    "passive": {
+      "name": "Straw Stuffing",
+      "text": "Your creatures have +1 DEF.",
+      "statics": [
+        {
+          "kind": "stat",
+          "scope": "allAllies",
+          "atk": 0,
+          "def": 1
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Scarecrow Stand",
+      "text": "Summon a 1/1 Sproutling in each of your empty lanes.",
+      "effects": [
+        {
+          "type": "summon",
+          "cardId": "token_sproutling",
+          "where": "allEmptyLanes"
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_glacia",
+    "name": "Glacia the Still",
+    "title": "Witch of the Frozen Mere",
+    "landscape": "azure",
+    "flavorText": "She has not blinked in three hundred winters.",
+    "artKey": "hero_boss_glacia",
+    "passive": {
+      "name": "Cold Patience",
+      "text": "Whenever you cast a spell, charge your Ultimate by 15%.",
+      "abilities": [
+        {
+          "trigger": "onSpellCast",
+          "effects": [
+            {
+              "type": "chargeUltimate",
+              "amount": 15
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Deep Freeze",
+      "text": "Freeze all enemy creatures. Draw a card.",
+      "effects": [
+        {
+          "type": "freeze",
+          "target": "allEnemyCreatures"
+        },
+        {
+          "type": "draw",
+          "amount": 1
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_mire",
+    "name": "Grandmother Mire",
+    "title": "Crone of Gloomwater",
+    "landscape": "murk",
+    "flavorText": "Her soup has eleven secret ingredients. Do not ask about the eleventh.",
+    "artKey": "hero_boss_mire",
+    "passive": {
+      "name": "Bog Broth",
+      "text": "Whenever an enemy creature is destroyed, heal your Hero 1.",
+      "abilities": [
+        {
+          "trigger": "onEnemyCreatureDestroyed",
+          "effects": [
+            {
+              "type": "heal",
+              "target": "ownHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Rotting Tide",
+      "text": "Poison all enemy creatures for 2.",
+      "effects": [
+        {
+          "type": "poison",
+          "target": "allEnemyCreatures",
+          "amount": 2
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_scorch",
+    "name": "Sultan Scorch",
+    "title": "Tyrant of the Sunscour",
+    "landscape": "dune",
+    "flavorText": "He taxes sand. Everyone pays.",
+    "artKey": "hero_boss_scorch",
+    "passive": {
+      "name": "Burning Decree",
+      "text": "Your spells deal 1 extra damage.",
+      "statics": [
+        {
+          "kind": "spellPower",
+          "amount": 1
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Solar Judgment",
+      "text": "Deal 1 damage to all enemy creatures and 4 damage to the enemy Hero.",
+      "effects": [
+        {
+          "type": "damage",
+          "target": "allEnemyCreatures",
+          "amount": 1
+        },
+        {
+          "type": "damage",
+          "target": "enemyHero",
+          "amount": 4
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_bonbon",
+    "name": "Madame Bonbon",
+    "title": "Confectioner of Sugarcrest",
+    "landscape": "candy",
+    "flavorText": "Every guest leaves happy. Few guests leave.",
+    "artKey": "hero_boss_bonbon",
+    "passive": {
+      "name": "Sweet Tooth",
+      "text": "End of Turn: Heal your Hero 1.",
+      "abilities": [
+        {
+          "trigger": "endOfTurn",
+          "effects": [
+            {
+              "type": "heal",
+              "target": "ownHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Candy Fortress",
+      "text": "Give your creatures Shield and heal them 3.",
+      "effects": [
+        {
+          "type": "shield",
+          "target": "allAllyCreatures"
+        },
+        {
+          "type": "heal",
+          "target": "allAllyCreatures",
+          "amount": 3
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_vex",
+    "name": "Pyrelord Vex",
+    "title": "Heart of Cinderpeak",
+    "landscape": "ember",
+    "flavorText": "The volcano is not erupting. It is applauding.",
+    "artKey": "hero_boss_vex",
+    "passive": {
+      "name": "Molten Core",
+      "text": "Your creatures on Ember Peaks have +1 ATK.",
+      "statics": [
+        {
+          "kind": "stat",
+          "scope": "allAllies",
+          "atk": 1,
+          "def": 0,
+          "onLandscape": "ember"
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Magma Burst",
+      "text": "Deal 2 damage to all enemy creatures and to the enemy Hero.",
+      "effects": [
+        {
+          "type": "damage",
+          "target": "allEnemyCreatures",
+          "amount": 2
+        },
+        {
+          "type": "damage",
+          "target": "enemyHero",
+          "amount": 2
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_jester",
+    "name": "The Hollow Jester",
+    "title": "Ringmaster of the Rift",
+    "landscape": "neutral",
+    "flavorText": "The joke is on you. It always was.",
+    "artKey": "hero_boss_jester",
+    "passive": {
+      "name": "Cruel Punchline",
+      "text": "Whenever you cast a spell, deal 1 damage to a random enemy creature.",
+      "abilities": [
+        {
+          "trigger": "onSpellCast",
+          "effects": [
+            {
+              "type": "damage",
+              "target": "randomEnemyCreature",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Pull the Rug",
+      "text": "Flip two random enemy landscapes. Draw a card.",
+      "effects": [
+        {
+          "type": "flip",
+          "target": "randomEnemyLandscape",
+          "count": 2
+        },
+        {
+          "type": "draw",
+          "amount": 1
+        }
+      ]
+    },
+    "boss": true
+  },
+  {
+    "id": "boss_aurelia",
+    "name": "Queen Aurelia",
+    "title": "The Undying Crown",
+    "landscape": "neutral",
+    "flavorText": "Every land once bowed to her. She would like that back.",
+    "artKey": "hero_boss_aurelia",
+    "passive": {
+      "name": "Royal Vigor",
+      "text": "Start of Turn: Heal your Hero 1.",
+      "abilities": [
+        {
+          "trigger": "startOfTurn",
+          "effects": [
+            {
+              "type": "heal",
+              "target": "ownHero",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "Royal Decree",
+      "text": "Destroy an enemy creature. Heal your Hero 5.",
+      "effects": [
+        {
+          "type": "destroy",
+          "target": "chosenEnemyCreature"
+        },
+        {
+          "type": "heal",
+          "target": "ownHero",
+          "amount": 5
+        }
+      ]
+    },
+    "boss": true
+  }
+]
